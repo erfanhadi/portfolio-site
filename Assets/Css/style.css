@@ -150,21 +150,28 @@ nav a:hover{
 /* start header */
 .header{
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     align-items: center;
     padding: 60px 0;
     color: var(--text);
 }
+.container{
+    width: 100%;
+}
 .erfan-content {
     display: flex;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    position: relative;
     align-items: center;
+    justify-content: end;
 }
 
 .erfan-text {
-    padding: 0 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
     animation: slideInLeft 1s ease-out;
     z-index: 100;
     background: rgba(0, 0, 0, 0.362);
@@ -175,44 +182,6 @@ nav a:hover{
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
 }
-.erfan-text button {
-    cursor: pointer;
-    padding: 0.1em 0.25em;
-    width: 13em;
-    height: 4.2em;
-    color: #fff;
-    background-color: #032201;
-    border: 0.08em solid #fff;
-    border-radius: 0.3em;
-    font-size: 12px;
-    margin-top: 20px;
-}
-
-.erfan-text button span {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 0.4em;
-    width: 8.25em;
-    height: 2.5em;
-    background-color: #032201;
-    border-radius: 0.2em;
-    font-size: 1.5em;
-    border: 0.08em solid #fff;
-    box-shadow: 0 0.4em 0.1em 0.019em #fff;
-}
-
-.erfan-text button span:active {
-    transition: all 0.5s;
-    transform: translate(0, 0.4em);
-    box-shadow: 0 0 0 0 #fff;
-}
-
-.erfan-text button span:not(active) {
-    transition: all 1d;
-}
-
 
 .greeting {
     color: #2bff00;
@@ -240,7 +209,6 @@ nav a:hover{
 .erfan-quote {
     color: #2bff00;
     font-size: 1.1rem;
-    margin-bottom: 35px;
 }
 /* Avatar and Solar System */
 .erfan-visual {
