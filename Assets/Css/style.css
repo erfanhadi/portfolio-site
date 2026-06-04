@@ -174,13 +174,10 @@ nav a:hover{
     left: 0;
     animation: slideInLeft 1s ease-out;
     z-index: 100;
-    background: rgba(0, 0, 0, 0.362);
-    border: 1px solid #2bff00;
     border-radius: 12px;
     padding: 30px;
     font-size: 1.1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1.5px);
 }
 
 .greeting {
@@ -213,6 +210,7 @@ nav a:hover{
 /* Avatar and Solar System */
 .erfan-visual {
     display: flex;
+    position: absolute;
     justify-content: center;
     animation: slideInRight 1s ease-out;
 }
@@ -461,6 +459,7 @@ nav a:hover{
     border: 1px solid #2bff00;
     border-radius: 12px;
     padding: 30px;
+    margin: 0 auto;
     font-family: 'Courier New', monospace;
     font-size: 1.1rem;
     color: var(--accent);
@@ -1272,8 +1271,13 @@ footer{
 .erfan-content {
     gap: 50px;
     text-align: center;
+    justify-content: center;
     flex-wrap: wrap;
-    }
+}
+
+.erfan-text{
+    top: -120px;
+}
 
 .erfan-social {
     justify-content: center;
@@ -1283,6 +1287,12 @@ footer{
     font-size: 3rem;
 }
 /* end header  */
+/* start about me  */
+.code-animation{
+    width: 550px;
+}
+/* end about me */
+
 
 /* start Certifications */
 .Certifications{
@@ -1365,21 +1375,22 @@ footer{
 nav{
     padding: 15px 0;
     width: 100%;
-    }
-    .nav_box{
-        width: 75%;
-    }
-    .nav_icon{
+}
+.nav_box{
+    width: 75%;
+}
+.nav_icon{
     font-size: 15px;
-    }
-    .nav_links a{
-        display: none;
-    }
-    .nav_bar{
+}
+.nav_links a{
+    display: none;
+}
+.nav_bar{
         display: flex;
-    }
-    /* end nav  */
-    /* start header */
+}
+/* end nav  */
+
+/* start header */
 .erfan-content {
     gap: 40px;
     flex-wrap: wrap;
@@ -1387,6 +1398,9 @@ nav{
 
 .erfan-social {
     justify-content: center;
+}
+.erfan-visual{
+    top: 40px;
 }
 
 .erfan-title {
@@ -1693,6 +1707,11 @@ nav{
     padding: 12px 15px;
 }
 /* end header  */
+/* start about me  */
+.code-animation{
+    width: 400px;
+}
+/* end about me */
 
 /* start Certifications */
 .Certifications{
@@ -1794,4 +1813,9 @@ nav{
     .social-links {
     justify-content: center;
     }
+    /* start about me  */
+.code-animation{
+    width: 300px;
+}
+/* end about me */
 }
