@@ -60,10 +60,17 @@ function initTypingEffect() {
 
 function initOrbitAnimations() {
     const planets = document.querySelectorAll('.random-orbit');
+    const container = document.querySelector('.avatar-container');
+    const sunCore = document.querySelector('.sun-core');
+    const containerSize = container ? container.offsetWidth : 500;
+    const sunRadius = sunCore ? sunCore.offsetWidth / 2 : 84;
+    const minOrbitRadius = sunRadius + 35;
+    const maxOrbitRadius = containerSize * 0.46;
+    const orbitStep = (maxOrbitRadius - minOrbitRadius) / Math.max(planets.length - 1, 1);
 
     planets.forEach((planet, index) => {
-        const startAngle = Math.random() * 360;
-        const radius = 120 + (index * 40);
+        const startAngle = (index * (360 / planets.length));
+        const radius = minOrbitRadius + (index * orbitStep);
 
         const duration = 15 + Math.random() * 15;
         const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
