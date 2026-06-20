@@ -413,6 +413,45 @@ body::after {
 }
 
 
+/* ── Contact — luxury send button ──────────────────────── */
+.btn-send {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    background: transparent;
+    border: 1.5px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Space Grotesk", sans-serif;
+    overflow: hidden;
+    transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s ease;
+    margin-top: 20px;
+}
+.btn-send::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+.btn-send:hover::before { transform: scaleX(1); }
+.btn-send:hover {
+    color: #001a08;
+    box-shadow: 0 0 28px rgba(43, 255, 0, 0.25);
+}
+.btn-send span { position: relative; z-index: 1; }
+
 /* ── Hamburger → X animation ────────────────────────────── */
 .hamburger-btn {
     width: 40px;
