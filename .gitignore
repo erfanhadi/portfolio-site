@@ -11,3 +11,10 @@ Assets/video/
 # Claude Code local config
 .claude/
 
+# Node
+node_modules/
+package-lock.json
+
+# Generated Tailwind output
+Assets/Css/output.css
+

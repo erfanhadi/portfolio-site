@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./Assets/Css/input.css -o ./Assets/Css/output.css",
+    "watch": "tailwindcss -i ./Assets/Css/input.css -o ./Assets/Css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.3.1"
+  }
+}
