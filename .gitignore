@@ -8,3 +8,6 @@ Assets/video/
 *.jpeg
 *.svg
 
+# Claude Code local config
+.claude/
+
