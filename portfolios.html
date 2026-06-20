@@ -1,172 +1,326 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html lang="en">
-<head>
-    <title>Erfan Hadi - Software & Web Developer | Computer Engineering</title>
-    <meta name="description" content="Erfan Hadi is a Frontend developer showcasing projects, skills, and experience.">
-    <meta property="og:title" content="Erfan Hadi - Frontend Developer" />
-    <meta property="og:description" content="Frontend Developer portfolio featuring selected projects and professional experience." />
-    <meta property="og:image" content="https://www.erfanhadi.dev/cover.jpg" />
-    <meta property="og:url" content="https://www.erfanhadi.dev" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Erfan Hadi - Frontend Developer" />
-    <meta name="twitter:description" content="Frontend Developer portfolio and selected works." />
-    <meta name="twitter:image" content="https://www.erfanhadi.dev/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="Assets/Css/output.css">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="icon" href="Assets/Images/5818879735268838157.jpg" sizes="48x48">
-</head>
-<body class="bg-bg-1 text-text leading-[1.6]">
-
-    <!-- ── Loader ───────────────────────────────────────── -->
-    <div class="loader_container">
-        <div class="main-container">
-            <div id="planetTrail1"></div>
-            <div id="planetTrail2"></div>
-            <div id="planetTrail3"></div>
-            <div class="planets">
-                <div id="planet"></div>
-                <div id="star"></div>
-                <div id="starShadow"></div>
-                <div id="blackHoleDisk2"></div>
-                <div id="blackHole"></div>
-                <div id="blackHoleDisk1"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ── Nav ──────────────────────────────────────────── -->
-    <nav class="fixed top-0 left-0 w-full z-[1000] py-[15px] bg-[rgba(34,155,94,0.438)] backdrop-blur-[4px]">
-        <div class="w-3/4 mx-auto flex justify-between">
-            <div class="text-[35px] font-bold">
-                <a href="" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-laptop-code"></i>erfan</a>
-            </div>
-            <div class="flex items-center">
-                <a href="index.html" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">HOME</p></a>
-                <a href="index.html#Certifications" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">CERTIFICATIONS</p></a>
-                <a href="portfolios.html" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">PORTFOLIOS</p></a>
-                <a href="index.html#contact" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">CONTACT</p></a>
-                <div class="hidden max-lg:flex gap-[15px] text-[35px] font-bold">
-                    <a href="index.html" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-house-chimney"></i></a>
-                    <a href="index.html#Certifications" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-stamp"></i></a>
-                    <a href="portfolios.html" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-business-time"></i></a>
-                    <a href="index.html#contact" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-phone"></i></a>
+    <head>
+        <title>
+            Erfan Hadi - Software & Web Developer | Computer Engineering
+        </title>
+        <meta
+            name="description"
+            content="Erfan Hadi is a Frontend developer showcasing projects, skills, and experience."
+        />
+        <meta property="og:title" content="Erfan Hadi - Frontend Developer" />
+        <meta
+            property="og:description"
+            content="Frontend Developer portfolio featuring selected projects and professional experience."
+        />
+        <meta
+            property="og:image"
+            content="https://www.erfanhadi.dev/cover.jpg"
+        />
+        <meta property="og:url" content="https://www.erfanhadi.dev" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Erfan Hadi - Frontend Developer" />
+        <meta
+            name="twitter:description"
+            content="Frontend Developer portfolio and selected works."
+        />
+        <meta name="twitter:image" content="https://www.erfanhadi.dev/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="Assets/Css/output.css" />
+        <link
+            rel="stylesheet"
+            href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+        />
+        <link
+            rel="icon"
+            href="Assets/Images/5818879735268838157.jpg"
+            sizes="48x48"
+        />
+    </head>
+    <body class="bg-bg-1 text-text leading-[1.6]">
+        <!-- ── Loader ───────────────────────────────────────── -->
+        <div class="loader_container">
+            <div class="main-container">
+                <div id="planetTrail1"></div>
+                <div id="planetTrail2"></div>
+                <div id="planetTrail3"></div>
+                <div class="planets">
+                    <div id="planet"></div>
+                    <div id="star"></div>
+                    <div id="starShadow"></div>
+                    <div id="blackHoleDisk2"></div>
+                    <div id="blackHole"></div>
+                    <div id="blackHoleDisk1"></div>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <!-- ── Projects ─────────────────────────────────────── -->
-    <section class="pt-[100px]">
-
-        <div class="text-center mb-8">
-            <h4 class="mb-2 text-text font-bold"><i class="fa-solid fa-toolbox mr-2 text-accent"></i>TOOLS & PROJECTS</h4>
-            <p class="text-muted"><i class="fa-solid fa-wand-magic-sparkles mr-1 text-accent"></i>Here are some of the tools I use and projects I've built to improve my skills.</p>
-        </div>
-
-        <!-- Tools list -->
-        <div class="flex justify-center p-[30px] rounded-[15px] mb-8">
-            <ul class="flex flex-wrap gap-5 list-none p-0 max-w-[800px] justify-center">
-                <li class="flex-[0_0_140px]">
-                    <a href="#" class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]">
-                        <i class="fa-brands fa-html5"></i> Html
-                    </a>
-                </li>
-                <li class="flex-[0_0_140px]">
-                    <a href="#" class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]">
-                        <i class="fa-brands fa-css3-alt"></i> Css
-                    </a>
-                </li>
-                <li class="flex-[0_0_140px]">
-                    <a href="#" class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]">
-                        <i class="fa-brands fa-square-js"></i> JavaScript
-                    </a>
-                </li>
-                <li class="flex-[0_0_140px]">
-                    <a href="#" class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]">
-                        <i class="fa-brands fa-git-alt"></i> git
-                    </a>
-                </li>
-                <li class="flex-[0_0_140px]">
-                    <a href="#" class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]">
-                        <i class="fa-brands fa-python"></i> Python
-                    </a>
-                </li>
-                <li class="flex-[0_0_140px]">
-                    <a href="#" class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]">
-                        <i class="fa-brands fa-github"></i> Github
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="text-center mb-8">
-            <p class="text-muted"><i class="fa-solid fa-rocket mr-1 text-accent"></i>Check out my recent projects below.</p>
-        </div>
-
-        <!-- Project cards -->
-        <div class="flex justify-evenly items-center flex-wrap p-[30px] my-[30px] mx-auto">
-
-            <div class="project-card group relative bg-[rgba(255,255,255,0.04)] backdrop-blur-[1.5px] border border-[rgba(80,255,103,0.25)] text-muted rounded-[22px] overflow-hidden text-center transition-all duration-[400ms] cursor-pointer shadow-[0_0_25px_rgba(255,80,120,0.15)] pb-[5px] my-[10px] max-w-[350px] max-h-[400px]
-                         hover:-translate-y-[10px] hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(100,255,80,0.5)]
-                         max-md:w-[310px] max-sm:w-[310px]">
-                <div>
-                    <img src="Assets/Images/portfolioWebSite.png" alt="Portfolio WebSite"
-                         class="w-full h-[180px] object-cover transition-transform duration-[400ms] group-hover:hidden">
-                    <video src="Assets/video/portfolioWebSite-Video.mp4" poster="Assets/Images/portfolioWebSite.png"
-                           height="180" width="350" autoplay playsinline muted loop preload="none"
-                           class="hidden object-cover group-hover:block"></video>
-                    <h3 class="my-[15px_0_5px] text-[1.2rem] text-accent-2 transition-colors duration-300 group-hover:text-accent">
-                        <a href="https://erfanhadi.dev/"></a>Portfolio WebSite
-                    </h3>
+        <!-- ── Nav ──────────────────────────────────────────── -->
+        <nav
+            class="fixed top-0 left-0 w-full z-[1000] py-[15px] bg-[rgba(34,155,94,0.438)] backdrop-blur-[4px]"
+        >
+            <div class="w-3/4 mx-auto flex justify-between">
+                <div class="text-[35px] font-bold">
+                    <a href="" class="text-white no-underline hover:text-accent"
+                        ><i class="fa-solid fa-laptop-code"></i>erfan</a
+                    >
                 </div>
-                <div>
-                    <p class="text-[0.9rem] mx-[10px] mb-[15px]">Showcase projects, skills, and experience through a clean interface.</p>
-                    <div>
-                        <a href="#" class="inline-block mx-[5px] my-[5px] py-[5px] px-[10px] bg-[rgba(255,255,255,0.39)] text-[#111] rounded-[6px] no-underline text-[0.8rem] transition-all hover:-translate-y-[3px] hover:scale-105 hover:bg-white hover:shadow-[0_8px_12px_rgba(0,0,0,0.3)]">
+                <div class="flex items-center">
+                    <a
+                        href="index.html"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                        ><p class="text-xl font-bold">HOME</p></a
+                    >
+                    <a
+                        href="index.html#Certifications"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                        ><p class="text-xl font-bold">CERTIFICATIONS</p></a
+                    >
+                    <a
+                        href="portfolios.html"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                        ><p class="text-xl font-bold">PORTFOLIOS</p></a
+                    >
+                    <a
+                        href="index.html#contact"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                        ><p class="text-xl font-bold">CONTACT</p></a
+                    >
+                    <div
+                        class="hidden max-lg:flex gap-[15px] text-[35px] font-bold"
+                    >
+                        <a
+                            href="index.html"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-house-chimney"></i
+                        ></a>
+                        <a
+                            href="index.html#Certifications"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-stamp"></i
+                        ></a>
+                        <a
+                            href="portfolios.html"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-business-time"></i
+                        ></a>
+                        <a
+                            href="index.html#contact"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-phone"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ── Projects ─────────────────────────────────────── -->
+        <section class="pt-[100px]">
+            <div class="text-center mb-8">
+                <h4 class="mb-2 text-text font-bold">
+                    <i class="fa-solid fa-toolbox mr-2 text-accent"></i>TOOLS &
+                    PROJECTS
+                </h4>
+                <p class="text-muted">
+                    <i
+                        class="fa-solid fa-wand-magic-sparkles mr-1 text-accent"
+                    ></i
+                    >Here are some of the tools I use and projects I've built to
+                    improve my skills.
+                </p>
+            </div>
+
+            <!-- Tools list -->
+            <div class="flex justify-center p-[30px] rounded-[15px] mb-8">
+                <ul
+                    class="flex flex-wrap gap-5 list-none p-0 max-w-[800px] justify-center"
+                >
+                    <li class="flex-[0_0_140px]">
+                        <a
+                            href="#"
+                            class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
+                        >
                             <i class="fa-brands fa-html5"></i> Html
                         </a>
-                        <a href="#" class="inline-block mx-[5px] my-[5px] py-[5px] px-[10px] bg-[rgba(255,255,255,0.39)] text-[#111] rounded-[6px] no-underline text-[0.8rem] transition-all hover:-translate-y-[3px] hover:scale-105 hover:bg-white hover:shadow-[0_8px_12px_rgba(0,0,0,0.3)]">
-                            <i class="fa-brands fa-square-js"></i> Java Script
+                    </li>
+                    <li class="flex-[0_0_140px]">
+                        <a
+                            href="#"
+                            class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
+                        >
+                            <i class="fa-brands fa-css3-alt"></i> Css
                         </a>
-                        <a href="#" class="inline-block mx-[5px] my-[5px] py-[5px] px-[10px] bg-[rgba(255,255,255,0.39)] text-[#111] rounded-[6px] no-underline text-[0.8rem] transition-all hover:-translate-y-[3px] hover:scale-105 hover:bg-white hover:shadow-[0_8px_12px_rgba(0,0,0,0.3)]">
-                            <i class="fa-brands fa-css3-alt"></i> css
+                    </li>
+                    <li class="flex-[0_0_140px]">
+                        <a
+                            href="#"
+                            class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
+                        >
+                            <i class="fa-brands fa-square-js"></i> JavaScript
                         </a>
-                    </div>
-                    <a class="bottom-links text-accent no-underline ml-[5px] mt-[10px] mb-[10px] block transition-colors duration-300 hover:text-accent"
-                       href="https://erfanhadi.dev/">
-                        View Project<i class="fa-solid fa-arrow-right-to-bracket ml-0 transition-[margin-left] duration-500"></i>
-                    </a>
-                </div>
+                    </li>
+                    <li class="flex-[0_0_140px]">
+                        <a
+                            href="#"
+                            class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
+                        >
+                            <i class="fa-brands fa-git-alt"></i> git
+                        </a>
+                    </li>
+                    <li class="flex-[0_0_140px]">
+                        <a
+                            href="#"
+                            class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
+                        >
+                            <i class="fa-brands fa-python"></i> Python
+                        </a>
+                    </li>
+                    <li class="flex-[0_0_140px]">
+                        <a
+                            href="#"
+                            class="flex items-center gap-2 justify-center no-underline text-[#acf0d1] bg-[#00203f] py-[15px] px-5 rounded-xl font-bold transition-all shadow-[0_4px_6px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:-translate-y-[5px] hover:scale-105 hover:shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
+                        >
+                            <i class="fa-brands fa-github"></i> Github
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-        </div>
-    </section>
+            <div class="text-center mb-8">
+                <p class="text-muted">
+                    <i class="fa-solid fa-rocket mr-1 text-accent"></i>Check out
+                    my recent projects below.
+                </p>
+            </div>
 
-    <!-- ── Footer ────────────────────────────────────────── -->
-    <footer class="bg-[rgb(34,155,94)] py-[70px]">
-        <div class="w-3/4 mx-auto">
-            <ul class="list-none flex justify-center mb-[35px] p-0">
-                <li class="inline-block"><a href="" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-twitter"></i></a></li>
-                <li class="inline-block"><a href="https://github.com/erfanhadi" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-github"></i></a></li>
-                <li class="inline-block"><a href="" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-instagram"></i></a></li>
-                <li class="inline-block"><a href="https://www.linkedin.com/in/hero-hadi-ab7557357/" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-        <div class="text-center text-white mx-[15px]">
-            <p class="my-[10px]">
-                <i class="fa-regular fa-copyright"></i> 2025 erfan hadi. All Rights Reserved.
-                Designed & <a href="" class="no-underline text-muted hover:text-accent">Bootstrap templates</a> by erfan hadi
-            </p>
-            <p class="my-[10px]">
-                <a href="" class="no-underline text-muted hover:text-accent"><i class="fa-solid fa-code"></i></a>
-                develope by <a href="" class="no-underline text-muted hover:text-accent">erfan hadi</a>
-            </p>
-        </div>
-    </footer>
+            <!-- Project cards -->
+            <div
+                class="flex justify-evenly items-center flex-wrap p-[30px] my-[30px] mx-auto"
+            >
+                <div
+                    class="project-card group relative bg-[rgba(255,255,255,0.04)] backdrop-blur-[1.5px] border border-[rgba(80,255,103,0.25)] text-muted rounded-[22px] overflow-hidden text-center transition-all duration-[400ms] cursor-pointer shadow-[0_0_25px_rgba(255,80,120,0.15)] pb-[5px] my-[10px] max-w-[350px] max-h-[400px] hover:-translate-y-[10px] hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(100,255,80,0.5)] max-md:w-[310px] max-sm:w-[310px]"
+                >
+                    <div>
+                        <img
+                            src="Assets/Images/portfolioWebSite.png"
+                            alt="Portfolio WebSite"
+                            class="w-full h-[180px] object-cover transition-transform duration-[400ms] group-hover:hidden"
+                        />
+                        <video
+                            src="Assets/video/portfolioWebSite-Video.mp4"
+                            poster="Assets/Images/portfolioWebSite.png"
+                            height="180"
+                            width="350"
+                            autoplay
+                            playsinline
+                            muted
+                            loop
+                            preload="none"
+                            class="hidden object-cover group-hover:block"
+                        ></video>
+                        <h3
+                            class="my-[15px_0_5px] text-[1.2rem] text-accent-2 transition-colors duration-300 group-hover:text-accent"
+                        >
+                            <a href="https://erfanhadi.dev/"></a>Portfolio
+                            WebSite
+                        </h3>
+                    </div>
+                    <div>
+                        <p class="text-[0.9rem] mx-[10px] mb-[15px]">
+                            Showcase projects, skills, and experience through a
+                            clean interface.
+                        </p>
+                        <div>
+                            <a
+                                href="#"
+                                class="inline-block mx-[5px] my-[5px] py-[5px] px-[10px] bg-[rgba(255,255,255,0.39)] text-[#111] rounded-[6px] no-underline text-[0.8rem] transition-all hover:-translate-y-[3px] hover:scale-105 hover:bg-white hover:shadow-[0_8px_12px_rgba(0,0,0,0.3)]"
+                            >
+                                <i class="fa-brands fa-html5"></i> Html
+                            </a>
+                            <a
+                                href="#"
+                                class="inline-block mx-[5px] my-[5px] py-[5px] px-[10px] bg-[rgba(255,255,255,0.39)] text-[#111] rounded-[6px] no-underline text-[0.8rem] transition-all hover:-translate-y-[3px] hover:scale-105 hover:bg-white hover:shadow-[0_8px_12px_rgba(0,0,0,0.3)]"
+                            >
+                                <i class="fa-brands fa-square-js"></i> Java
+                                Script
+                            </a>
+                            <a
+                                href="#"
+                                class="inline-block mx-[5px] my-[5px] py-[5px] px-[10px] bg-[rgba(255,255,255,0.39)] text-[#111] rounded-[6px] no-underline text-[0.8rem] transition-all hover:-translate-y-[3px] hover:scale-105 hover:bg-white hover:shadow-[0_8px_12px_rgba(0,0,0,0.3)]"
+                            >
+                                <i class="fa-brands fa-css3-alt"></i> css
+                            </a>
+                        </div>
+                        <a
+                            class="bottom-links text-accent no-underline ml-[5px] mt-[10px] mb-[10px] block transition-colors duration-300 hover:text-accent"
+                            href="https://erfanhadi.dev/"
+                        >
+                            View Project<i
+                                class="fa-solid fa-arrow-right-to-bracket ml-0 transition-[margin-left] duration-500"
+                            ></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script src="Assets/Js/script.js"></script>
-</body>
+        <!-- ── Footer ────────────────────────────────────────── -->
+        <footer class="bg-[rgb(34,155,94)] py-[70px]">
+            <div class="w-3/4 mx-auto">
+                <ul class="list-none flex justify-center mb-[35px] p-0">
+                    <li class="inline-block">
+                        <a
+                            href=""
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-twitter"></i
+                        ></a>
+                    </li>
+                    <li class="inline-block">
+                        <a
+                            href="https://github.com/erfanhadi"
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-github"></i
+                        ></a>
+                    </li>
+                    <li class="inline-block">
+                        <a
+                            href=""
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                    </li>
+                    <li class="inline-block">
+                        <a
+                            href="https://www.linkedin.com/in/hero-hadi-ab7557357/"
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-linkedin"></i
+                        ></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center text-white mx-[15px]">
+                <p class="my-[10px]">
+                    <i class="fa-regular fa-copyright"></i> 2025 erfan hadi. All
+                    Rights Reserved. Designed &
+                    <a href="" class="no-underline text-muted hover:text-accent"
+                        >Bootstrap templates</a
+                    >
+                    by erfan hadi
+                </p>
+                <p class="my-[10px]">
+                    <a href="" class="no-underline text-muted hover:text-accent"
+                        ><i class="fa-solid fa-code"></i
+                    ></a>
+                    develope by
+                    <a href="" class="no-underline text-muted hover:text-accent"
+                        >erfan hadi</a
+                    >
+                </p>
+            </div>
+        </footer>
+
+        <script src="Assets/Js/script.js"></script>
+    </body>
 </html>

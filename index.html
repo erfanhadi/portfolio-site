@@ -1,316 +1,608 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html lang="en">
-<head>
-    <title>Erfan Hadi - Software & Web Developer | Computer Engineering</title>
-    <meta name="description" content="Erfan Hadi is a Frontend developer showcasing projects, skills, and experience.">
-    <meta property="og:title" content="Erfan Hadi - Frontend Developer" />
-    <meta property="og:description" content="Frontend Developer portfolio featuring selected projects and professional experience." />
-    <meta property="og:image" content="https://www.erfanhadi.dev/cover.jpg" />
-    <meta property="og:url" content="https://www.erfanhadi.dev" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Erfan Hadi - Frontend Developer" />
-    <meta name="twitter:description" content="Frontend Developer portfolio and selected works." />
-    <meta name="twitter:image" content="https://www.erfanhadi.dev/" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/Css/output.css">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="icon" href="Assets/Images/5818879735268838157.jpg" sizes="48x48">
-</head>
-<body class="bg-bg-1 text-text leading-[1.6]">
+    <head>
+        <title>
+            Erfan Hadi - Software & Web Developer | Computer Engineering
+        </title>
+        <meta
+            name="description"
+            content="Erfan Hadi is a Frontend developer showcasing projects, skills, and experience."
+        />
+        <meta property="og:title" content="Erfan Hadi - Frontend Developer" />
+        <meta
+            property="og:description"
+            content="Frontend Developer portfolio featuring selected projects and professional experience."
+        />
+        <meta
+            property="og:image"
+            content="https://www.erfanhadi.dev/cover.jpg"
+        />
+        <meta property="og:url" content="https://www.erfanhadi.dev" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Erfan Hadi - Frontend Developer" />
+        <meta
+            name="twitter:description"
+            content="Frontend Developer portfolio and selected works."
+        />
+        <meta name="twitter:image" content="https://www.erfanhadi.dev/" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="Assets/Css/output.css" />
+        <link
+            rel="stylesheet"
+            href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+        />
+        <link
+            rel="icon"
+            href="Assets/Images/5818879735268838157.jpg"
+            sizes="48x48"
+        />
+    </head>
 
-    <!-- ── Loader ───────────────────────────────────────── -->
-    <div class="loader_container">
-        <div class="main-container">
-            <div id="planetTrail1"></div>
-            <div id="planetTrail2"></div>
-            <div id="planetTrail3"></div>
-            <div class="planets">
-                <div id="planet"></div>
-                <div id="star"></div>
-                <div id="starShadow"></div>
-                <div id="blackHoleDisk2"></div>
-                <div id="blackHole"></div>
-                <div id="blackHoleDisk1"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ── Nav ──────────────────────────────────────────── -->
-    <nav class="fixed top-0 left-0 w-full z-[1000] py-[15px] bg-[rgba(34,155,94,0.438)] backdrop-blur-[4px]">
-        <div class="w-3/4 mx-auto flex justify-between">
-            <div class="text-[35px] font-bold">
-                <a href="" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-laptop-code"></i>erfan</a>
-            </div>
-            <div class="flex items-center">
-                <!-- desktop links -->
-                <a href="index.html" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">HOME</p></a>
-                <a href="index.html#Certifications" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">CERTIFICATIONS</p></a>
-                <a href="portfolios.html" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">PORTFOLIOS</p></a>
-                <a href="index.html#contact" class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"><p class="text-xl font-bold">CONTACT</p></a>
-                <!-- mobile icon links -->
-                <div class="hidden max-lg:flex gap-[15px] text-[35px] font-bold">
-                    <a href="index.html" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-house-chimney"></i></a>
-                    <a href="index.html#Certifications" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-stamp"></i></a>
-                    <a href="portfolios.html" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-business-time"></i></a>
-                    <a href="index.html#contact" class="text-white no-underline hover:text-accent"><i class="fa-solid fa-phone"></i></a>
+    <body class="bg-bg-1 text-text leading-[1.6]">
+        <!-- ── Loader ───────────────────────────────────────── -->
+        <div class="loader_container">
+            <div class="main-container">
+                <div id="planetTrail1"></div>
+                <div id="planetTrail2"></div>
+                <div id="planetTrail3"></div>
+                <div class="planets">
+                    <div id="planet"></div>
+                    <div id="star"></div>
+                    <div id="starShadow"></div>
+                    <div id="blackHoleDisk2"></div>
+                    <div id="blackHole"></div>
+                    <div id="blackHoleDisk1"></div>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <!-- ── Header / Hero ────────────────────────────────── -->
-    <header class="min-h-screen flex items-center py-[60px] text-text" id="header">
-        <div class="max-w-[1120px] w-full mx-auto px-5 box-border">
-            <div class="flex relative items-center justify-end
-                        max-lg:flex-col max-lg:items-center max-lg:justify-center max-lg:text-center max-lg:gap-10 max-lg:py-20
-                        max-md:gap-[30px]">
-                <!-- Hero Text -->
-                <div class="absolute left-0 flex flex-col justify-center z-[100] rounded-xl p-[30px] text-[1.1rem] backdrop-blur-[1.5px] [animation:slideInLeft_1s_ease-out]
-                            max-lg:static max-lg:p-5 max-md:text-center">
-                    <p class="text-accent text-[1.1rem] mb-[15px] max-sm:text-[1rem]"><i class="fa-solid fa-hand-wave mr-2"></i>Hello, I'm Erfan hadi</p>
-                    <h1 class="text-[3.5rem] font-bold mb-5 leading-[1.2]
-                               max-lg:text-[3rem] max-md:text-[2.5rem] max-sm:text-[2rem]">
-                        <span id="typing-text"> Computer engineering </span>
-                        <span class="text-accent [animation:blink_1s_infinite]">|</span>
-                    </h1>
-                    <p class="text-accent text-[1.1rem] max-sm:text-[1rem]"><i class="fa-solid fa-lightbulb mr-2"></i>Expanding skills and discovering new ways to innovate</p>
+        <!-- ── Nav ──────────────────────────────────────────── -->
+        <nav
+            class="fixed top-0 left-0 w-full z-[1000] py-[15px] bg-[rgba(34,155,94,0.438)] backdrop-blur-[4px]"
+        >
+            <div class="w-3/4 mx-auto flex justify-between">
+                <div class="text-[35px] font-bold">
+                    <a href="" class="text-white no-underline hover:text-accent"
+                        ><i class="fa-solid fa-laptop-code"></i>erfan</a
+                    >
                 </div>
-                <!-- Hero Visual -->
-                <div class="absolute flex justify-center [animation:slideInRight_1s_ease-out] max-lg:static">
-                    <div class="relative w-[500px] h-[500px] flex items-center justify-center avatar-container
-                                max-md:w-[350px] max-md:h-[350px] max-sm:w-[250px] max-sm:h-[250px]">
-                        <!-- Sun Core -->
-                        <div class="w-[168px] h-[168px] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                                    border-4 border-[#ffd700]
-                                    [animation:sunGlow_3s_ease-in-out_infinite_alternate]
-                                    cursor-pointer transition-transform duration-300 overflow-hidden z-10 sun-core
-                                    max-md:w-20 max-md:h-20 max-sm:w-[60px] max-sm:h-[60px]">
-                            <img src="Assets/Images/5818879735268838157.jpg" alt="Sun Image" class="w-full h-full rounded-full object-cover">
-                        </div>
-
-                        <button class="orbit-icon html random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]" type="button">
-                            <img src="Assets/Images/html5-original.svg" alt="HTML" class="w-full h-full object-contain rounded-full">
-                        </button>
-                        <button class="orbit-icon css random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]" type="button">
-                            <img src="Assets/Images/css3-original.svg" alt="CSS" class="w-full h-full object-contain rounded-full">
-                        </button>
-                        <button class="orbit-icon js random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]" type="button">
-                            <img src="Assets/Images/javascript-original.svg" alt="JavaScript" class="w-full h-full object-contain rounded-full">
-                        </button>
-                        <button class="orbit-icon react random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]" type="button">
-                            <img src="Assets/Images/react-original.svg" alt="React" class="w-full h-full object-contain rounded-full">
-                        </button>
-                        <button class="orbit-icon nodejs random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]" type="button">
-                            <img src="Assets/Images/nodejs-original.svg" alt="Node.js" class="w-full h-full object-contain rounded-full">
-                        </button>
-                        <button class="orbit-icon python random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]" type="button">
-                            <img src="Assets/Images/python-original.svg" alt="Python" class="w-full h-full object-contain rounded-full">
-                        </button>
-                        <button class="orbit-icon git random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]" type="button">
-                            <img src="Assets/Images/git-original.svg" alt="Git" class="w-full h-full object-contain rounded-full">
-                        </button>
+                <div class="flex items-center">
+                    <!-- desktop links -->
+                    <a
+                        href="index.html"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                    >
+                        <p class="text-xl font-bold">HOME</p>
+                    </a>
+                    <a
+                        href="index.html#Certifications"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                    >
+                        <p class="text-xl font-bold">CERTIFICATIONS</p>
+                    </a>
+                    <a
+                        href="portfolios.html"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                    >
+                        <p class="text-xl font-bold">PORTFOLIOS</p>
+                    </a>
+                    <a
+                        href="index.html#contact"
+                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
+                    >
+                        <p class="text-xl font-bold">CONTACT</p>
+                    </a>
+                    <!-- mobile icon links -->
+                    <div
+                        class="hidden max-lg:flex gap-[15px] text-[35px] font-bold"
+                    >
+                        <a
+                            href="index.html"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-house-chimney"></i
+                        ></a>
+                        <a
+                            href="index.html#Certifications"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-stamp"></i
+                        ></a>
+                        <a
+                            href="portfolios.html"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-business-time"></i
+                        ></a>
+                        <a
+                            href="index.html#contact"
+                            class="text-white no-underline hover:text-accent"
+                            ><i class="fa-solid fa-phone"></i
+                        ></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </nav>
 
-    <!-- ── About Me ──────────────────────────────────────── -->
-    <section id="about" class="py-[60px]">
-        <div class="max-w-[1120px] w-full mx-auto px-5 box-border">
-            <h2 class="section-title text-[2.5rem] font-bold text-center mb-[80px] text-white relative max-md:text-[2rem]"><i class="fa-solid fa-user-astronaut mr-3 text-accent"></i>About Me</h2>
-            <div class="flex flex-nowrap gap-[80px] items-center mt-[60px]
-                        max-lg:flex-wrap max-lg:gap-[50px] max-sm:gap-[30px]">
-                <div>
-                    <p class="px-[5px] mb-5 leading-[1.8] text-muted">I'm erfan, a Computer Engineering Student exploring diverse fields of technology - from software and web development to artificial intelligence solutions. My goal is to continuously grow my skills and expand my horizons.</p>
+        <!-- ── Header / Hero ────────────────────────────────── -->
+        <header
+            class="min-h-screen flex items-center py-[60px] text-text"
+            id="header"
+        >
+            <div class="max-w-[1120px] w-full mx-auto px-5 box-border">
+                <div
+                    class="flex relative items-center justify-end max-lg:flex-col max-lg:items-center max-lg:justify-center max-lg:text-center max-lg:gap-10 max-lg:py-20 max-md:gap-[30px]"
+                >
+                    <!-- Hero Text -->
+                    <div
+                        class="absolute left-0 flex flex-col justify-center z-[100] rounded-xl p-[30px] text-[1.1rem] backdrop-blur-[1.5px] [animation:slideInLeft_1s_ease-out] max-lg:static max-lg:p-5 max-md:text-center"
+                    >
+                        <p
+                            class="text-accent text-[1.1rem] mb-[15px] max-sm:text-[1rem]"
+                        >
+                            <i class="fa-solid fa-hand-wave mr-2"></i>Hello, I'm
+                            Erfan hadi
+                        </p>
+                        <h1
+                            class="text-[3.5rem] font-bold mb-5 leading-[1.2] max-lg:text-[3rem] max-md:text-[2.5rem] max-sm:text-[2rem]"
+                        >
+                            <span id="typing-text"> Computer engineering </span>
+                            <span
+                                class="text-accent [animation:blink_1s_infinite]"
+                                >|</span
+                            >
+                        </h1>
+                        <p class="text-accent text-[1.1rem] max-sm:text-[1rem]">
+                            <i class="fa-solid fa-lightbulb mr-2"></i>Expanding
+                            skills and discovering new ways to innovate
+                        </p>
+                    </div>
+                    <!-- Hero Visual -->
+                    <div
+                        class="absolute flex justify-center [animation:slideInRight_1s_ease-out] max-lg:static"
+                    >
+                        <div
+                            class="relative w-[500px] h-[500px] flex items-center justify-center avatar-container max-md:w-[350px] max-md:h-[350px] max-sm:w-[250px] max-sm:h-[250px]"
+                        >
+                            <!-- Sun Core -->
+                            <div
+                                class="w-[168px] h-[168px] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-[#ffd700] [animation:sunGlow_3s_ease-in-out_infinite_alternate] cursor-pointer transition-transform duration-300 overflow-hidden z-10 sun-core max-md:w-20 max-md:h-20 max-sm:w-[60px] max-sm:h-[60px]"
+                            >
+                                <img
+                                    src="Assets/Images/5818879735268838157.jpg"
+                                    alt="Sun Image"
+                                    class="w-full h-full rounded-full object-cover"
+                                />
+                            </div>
+
+                            <button
+                                class="orbit-icon html random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]"
+                                type="button"
+                            >
+                                <img
+                                    src="Assets/Images/html5-original.svg"
+                                    alt="HTML"
+                                    class="w-full h-full object-contain rounded-full"
+                                />
+                            </button>
+                            <button
+                                class="orbit-icon css random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]"
+                                type="button"
+                            >
+                                <img
+                                    src="Assets/Images/css3-original.svg"
+                                    alt="CSS"
+                                    class="w-full h-full object-contain rounded-full"
+                                />
+                            </button>
+                            <button
+                                class="orbit-icon js random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]"
+                                type="button"
+                            >
+                                <img
+                                    src="Assets/Images/javascript-original.svg"
+                                    alt="JavaScript"
+                                    class="w-full h-full object-contain rounded-full"
+                                />
+                            </button>
+                            <button
+                                class="orbit-icon react random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]"
+                                type="button"
+                            >
+                                <img
+                                    src="Assets/Images/react-original.svg"
+                                    alt="React"
+                                    class="w-full h-full object-contain rounded-full"
+                                />
+                            </button>
+                            <button
+                                class="orbit-icon nodejs random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]"
+                                type="button"
+                            >
+                                <img
+                                    src="Assets/Images/nodejs-original.svg"
+                                    alt="Node.js"
+                                    class="w-full h-full object-contain rounded-full"
+                                />
+                            </button>
+                            <button
+                                class="orbit-icon python random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]"
+                                type="button"
+                            >
+                                <img
+                                    src="Assets/Images/python-original.svg"
+                                    alt="Python"
+                                    class="w-full h-full object-contain rounded-full"
+                                />
+                            </button>
+                            <button
+                                class="orbit-icon git random-orbit absolute top-1/2 left-1/2 w-12 h-12 rounded-full cursor-pointer origin-[0_0] z-[5] max-md:w-9 max-md:h-9 max-sm:w-[26px] max-sm:h-[26px]"
+                                type="button"
+                            >
+                                <img
+                                    src="Assets/Images/git-original.svg"
+                                    alt="Git"
+                                    class="w-full h-full object-contain rounded-full"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ── About Me ──────────────────────────────────────── -->
+        <section id="about" class="py-[60px]">
+            <div class="max-w-[1120px] w-full mx-auto px-5 box-border">
+                <h2
+                    class="section-title text-[2.5rem] font-bold text-center mb-[80px] text-white relative max-md:text-[2rem]"
+                >
+                    <i class="fa-solid fa-user-astronaut mr-3 text-accent"></i
+                    >About Me
+                </h2>
+                <div
+                    class="flex flex-nowrap gap-[80px] items-center mt-[60px] max-lg:flex-wrap max-lg:gap-[50px] max-sm:gap-[30px]"
+                >
                     <div>
-                        <h3 class="text-text mb-5 text-[1.2rem]"><i class="fa-solid fa-code mr-2 text-accent"></i>Skills & Technologies</h3>
-                        <div class="flex justify-center flex-wrap px-[5px] gap-[10px]">
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">HTML5</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">CSS3</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">JavaScript</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">React</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">C#</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">Git</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">Responsive Design</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">UI/UX</span>
-                            <span class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105">C++</span>
+                        <p class="px-[5px] mb-5 leading-[1.8] text-muted">
+                            I'm erfan, a Computer Engineering Student exploring
+                            diverse fields of technology - from software and web
+                            development to artificial intelligence solutions. My
+                            goal is to continuously grow my skills and expand my
+                            horizons.
+                        </p>
+                        <div>
+                            <h3 class="text-text mb-5 text-[1.2rem]">
+                                <i class="fa-solid fa-code mr-2 text-accent"></i
+                                >Skills & Technologies
+                            </h3>
+                            <div
+                                class="flex justify-center flex-wrap px-[5px] gap-[10px]"
+                            >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >HTML5</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >CSS3</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >JavaScript</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >React</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >C#</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >Git</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >Responsive Design</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >UI/UX</span
+                                >
+                                <span
+                                    class="bg-[#2bff0017] text-accent py-2 px-4 rounded-[20px] text-[0.9rem] border border-accent transition-all hover:bg-accent hover:text-white hover:scale-105"
+                                    >C++</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center max-lg:w-full">
+                        <div
+                            class="bg-[rgba(0,0,0,0.362)] w-[520px] border border-accent rounded-xl p-[30px] mx-auto text-[1.1rem] text-accent shadow-[0_10px_30px_rgba(0,0,0,0.3)] backdrop-blur-[2px] [font-family:'JetBrains_Mono',monospace] max-lg:w-full max-lg:max-w-[550px] max-sm:text-[0.9rem] max-sm:max-w-[400px]"
+                        >
+                            <div class="mb-2">const developer = {</div>
+                            <div class="mb-2 ml-5">name: 'Erfan Hadi',</div>
+                            <div class="mb-2 ml-5">
+                                role: 'Computer Engineering Student',
+                            </div>
+                            <div class="mb-2 ml-5">
+                                passion: 'Expanding skills and discovering new
+                                ways to innovate'
+                            </div>
+                            <div class="mb-2">};</div>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center items-center max-lg:w-full">
-                    <div class="bg-[rgba(0,0,0,0.362)] w-[520px] border border-accent rounded-xl p-[30px] mx-auto text-[1.1rem] text-accent shadow-[0_10px_30px_rgba(0,0,0,0.3)] backdrop-blur-[2px] [font-family:'JetBrains_Mono',monospace]
-                                max-lg:w-full max-lg:max-w-[550px] max-sm:text-[0.9rem] max-sm:max-w-[400px]">
-                        <div class="mb-2">const developer = {</div>
-                        <div class="mb-2 ml-5">name: 'Erfan Hadi',</div>
-                        <div class="mb-2 ml-5">role: 'Computer Engineering Student',</div>
-                        <div class="mb-2 ml-5">passion: 'Expanding skills and discovering new ways to innovate'</div>
-                        <div class="mb-2">};</div>
+            </div>
+        </section>
+
+        <!-- ── Certifications ────────────────────────────────── -->
+        <section class="py-[100px] max-w-[100vw]" id="Certifications">
+            <div
+                class="flex flex-wrap w-[90%] mx-auto max-lg:w-[85%] max-lg:justify-center"
+            >
+                <div
+                    class="text-center flex flex-col items-center py-[17px] w-full"
+                >
+                    <span class="text-[38px] font-bold text-white block"
+                        ><i class="fa-solid fa-award mr-3 text-accent"></i
+                        >Certifications</span
+                    >
+                    <span
+                        class="w-[100px] h-[3px] bg-accent inline-block m-[30px] rounded-[8rem] max-w-[52%]"
+                    ></span>
+                    <p class="text-muted font-normal w-[60%]">
+                        I am a front-end developer with a strong interest in
+                        designing and developing scalable and optimized systems.
+                        I am currently studying computer engineering and have
+                        experience working with most programming languages and
+                        frameworks. My focus is on user interface design,
+                        optimizing web performance, and creating smooth and
+                        engaging user experiences. I am always eager to learn
+                        new technologies and continuously improve my skills. My
+                        goal is to write clean, efficient, and secure code to
+                        deliver a better experience for both users and
+                        development teams.
+                    </p>
+                </div>
+
+                <!-- Cert 1 -->
+                <div
+                    class="flex py-[40px] max-lg:py-[30px] max-lg:flex-wrap max-lg:justify-center"
+                >
+                    <div class="w-[90%] max-lg:w-full">
+                        <img
+                            src="Assets/Images/daneshjooyar-En-certificate-10484-html-css-training.jpeg"
+                            alt="daneshjooyar-En-certificate-html-css-training"
+                            class="w-full max-w-[500px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] max-lg:w-full"
+                        />
+                    </div>
+                    <div
+                        class="text-muted w-full flex flex-col justify-center px-[15px] py-[6px]"
+                    >
+                        <h4 class="text-accent text-[35px] font-bold">
+                            Html and Css
+                        </h4>
+                        <p class="w-[60%] max-lg:w-full">
+                            <b>HTML</b> (HyperText Markup Language) defines the
+                            structure of web pages, including elements like
+                            text, images, links, and forms. <b>CSS</b> (Cascading Style
+                            Sheets) is used for styling HTML elements, allowing
+                            customization of colors, fonts, sizes, and layouts.
+                            Together, they form the foundation of web design,
+                            enabling the creation of visually appealing and
+                            user-friendly websites.
+                        </p>
+                        <p class="py-[3px]">
+                            <i
+                                class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"
+                            ></i>
+                            Separation of Structure and Presentation.
+                        </p>
+                        <p class="py-[3px]">
+                            <i
+                                class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"
+                            ></i>
+                            Responsive Design.
+                        </p>
+                        <p class="py-[3px]">
+                            <i
+                                class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"
+                            ></i>
+                            Flexibility and Customization.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div
+                    class="flex py-[40px] max-lg:py-[30px] max-lg:flex-wrap max-lg:justify-center"
+                >
+                    <div class="w-[90%] max-lg:w-full">
+                        <img
+                            src="Assets/Images/daneshjooyar-En-certificate-17255-algorithm-and-flowchart-for-beginners.jpeg"
+                            alt="daneshjooyar-En-certificate-17255-algorithm-and-flowchart"
+                            class="w-full max-w-[500px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] max-lg:w-full"
+                        />
+                    </div>
+                    <div
+                        class="text-muted w-full flex flex-col justify-center px-[15px] py-[6px]"
+                    >
+                        <h4 class="text-accent text-[35px] font-bold">
+                            algorithm and flowchart
+                        </h4>
+                        <p class="w-[60%] max-lg:w-full">
+                            <b>Algorithm</b> is a step-by-step and well-defined
+                            set of instructions used to solve a problem or
+                            perform a specific task. It clearly specifies the
+                            order of operations and ensures that, when followed
+                            correctly, the desired result is achieved.
+                            <b>Flowchart</b> is a graphical representation of an
+                            algorithm that uses symbols and arrows to illustrate
+                            each step of the process. It helps in better
+                            understanding, analyzing, and organizing the logic
+                            of a solution. Together, algorithms and flowcharts
+                            form the foundation of problem-solving and
+                            programming.
+                        </p>
+                        <p class="py-[3px]">
+                            <i
+                                class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"
+                            ></i>
+                            The steps are clear and easy to understand.
+                        </p>
+                        <p class="py-[3px]">
+                            <i
+                                class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"
+                            ></i>
+                            The solution is presented in an ordered, logical
+                            sequence.
+                        </p>
+                        <p class="py-[3px]">
+                            <i
+                                class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"
+                            ></i>
+                            They help analyze and solve problems effectively in
+                            programming.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ── Certifications ────────────────────────────────── -->
-    <section class="py-[100px] max-w-[100vw]" id="Certifications">
-        <div class="flex flex-wrap w-[90%] mx-auto max-lg:w-[85%] max-lg:justify-center">
+        <!-- ── Contact ───────────────────────────────────────── -->
+        <section class="py-[70px]" id="contact">
+            <div
+                class="w-3/4 mx-auto flex justify-around max-lg:flex-wrap max-lg:gap-10"
+            >
+                <!-- Form -->
+                <div class="w-[45%] max-lg:w-full">
+                    <form
+                        class="bg-[rgba(178,171,171,0.237)] p-[40px_35px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] rounded-xl backdrop-blur-[2px]"
+                    >
+                        <span class="block text-[28px] font-semibold mb-[30px]"
+                            ><i
+                                class="fa-solid fa-paper-plane mr-2 text-accent"
+                            ></i
+                            >Get In Touch</span
+                        >
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            class="block w-full box-border py-[10px] px-[10px] my-[5px] caret-accent rounded-xl border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted transition-[border-color,box-shadow] duration-[250ms] focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Your Email"
+                            class="block w-full box-border py-[10px] px-[10px] my-[5px] caret-accent rounded-xl border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted transition-[border-color,box-shadow] duration-[250ms] focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Your Phone"
+                            class="block w-full box-border py-[10px] px-[10px] my-[5px] caret-accent rounded-xl border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted transition-[border-color,box-shadow] duration-[250ms] focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]"
+                        />
+                        <textarea
+                            rows="10"
+                            placeholder="Write Message"
+                            class="block w-full box-border py-[15px] px-[10px] my-[5px] caret-accent rounded-xl border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted transition-[border-color,box-shadow] duration-[250ms] focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]"
+                        ></textarea>
+                        <span>
+                            <input
+                                type="submit"
+                                value="Send Message"
+                                class="cursor-pointer relative flex justify-center items-center mt-5 bottom-[0.4em] w-[8.25em] h-[2.5em] bg-card text-[1.5em] text-white border-[0.08em] border-white rounded-[0.2em] shadow-[0_0.4em_0.1em_0.019em_#fff] transition-all duration-[1000ms] active:translate-y-[0.4em] active:shadow-none active:duration-500"
+                            />
+                        </span>
+                    </form>
+                </div>
+                <!-- Info -->
+                <div class="w-[45%] max-lg:w-full">
+                    <div class="mb-[45px]">
+                        <span class="text-[#73767c] block"
+                            ><i class="fa-solid fa-envelope mr-2"></i
+                            >EMAIL</span
+                        >
+                        <span class="text-accent block mt-[10px]"
+                            >efn1385@gmail.com</span
+                        >
+                    </div>
+                    <div class="mb-[45px]">
+                        <span class="text-[#73767c] block"
+                            ><i class="fa-solid fa-phone mr-2"></i>PHONE</span
+                        >
+                        <span class="text-accent block mt-[10px]"
+                            >+98 936 999 3265</span
+                        >
+                    </div>
+                    <div class="mb-[45px]">
+                        <span class="text-[#73767c] block"
+                            ><i class="fa-solid fa-location-dot mr-2"></i
+                            >ADDRESS</span
+                        >
+                        <address class="text-accent block mt-[10px] not-italic">
+                            Iran Isfahan
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <div class="text-center flex flex-col items-center py-[17px] w-full">
-                <span class="text-[38px] font-bold text-white block"><i class="fa-solid fa-award mr-3 text-accent"></i>Certifications</span>
-                <span class="w-[100px] h-[3px] bg-accent inline-block m-[30px] rounded-[8rem] max-w-[52%]"></span>
-                <p class="text-muted font-normal w-[60%]">
-                    I am a front-end developer with a strong interest in designing and developing scalable and optimized systems.
-                    I am currently studying computer engineering and have experience working with most programming languages and frameworks.
-                    My focus is on user interface design, optimizing web performance, and creating smooth and engaging user experiences.
-                    I am always eager to learn new technologies and continuously improve my skills.
-                    My goal is to write clean, efficient, and secure code to deliver a better experience for both users and development teams.
+        <!-- ── Footer ────────────────────────────────────────── -->
+        <footer class="bg-[rgb(34,155,94)] py-[70px]">
+            <div class="w-3/4 mx-auto">
+                <ul class="list-none flex justify-center mb-[35px] p-0">
+                    <li class="inline-block">
+                        <a
+                            href=""
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-twitter"></i
+                        ></a>
+                    </li>
+                    <li class="inline-block">
+                        <a
+                            href="https://github.com/erfanhadi"
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-github"></i
+                        ></a>
+                    </li>
+                    <li class="inline-block">
+                        <a
+                            href=""
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                    </li>
+                    <li class="inline-block">
+                        <a
+                            href="https://www.linkedin.com/in/hero-hadi-ab7557357/"
+                            class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"
+                            ><i class="fa-brands fa-linkedin"></i
+                        ></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center text-white mx-[15px]">
+                <p class="my-[10px]">
+                    <i class="fa-regular fa-copyright"></i> 2025 erfan hadi. All
+                    Rights Reserved. Designed &
+                    <a href="" class="no-underline text-muted hover:text-accent"
+                        >Bootstrap templates</a
+                    >
+                    by erfan hadi
+                </p>
+                <p class="my-[10px]">
+                    <a href="" class="no-underline text-muted hover:text-accent"
+                        ><i class="fa-solid fa-code"></i
+                    ></a>
+                    develope by
+                    <a href="" class="no-underline text-muted hover:text-accent"
+                        >erfan hadi</a
+                    >
                 </p>
             </div>
+        </footer>
 
-            <!-- Cert 1 -->
-            <div class="flex py-[40px] max-lg:py-[30px] max-lg:flex-wrap max-lg:justify-center">
-                <div class="w-[90%] max-lg:w-full">
-                    <img src="Assets/Images/daneshjooyar-En-certificate-10484-html-css-training.jpeg"
-                         alt="daneshjooyar-En-certificate-html-css-training"
-                         class="w-full max-w-[500px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] max-lg:w-full">
-                </div>
-                <div class="text-muted w-full flex flex-col justify-center px-[15px] py-[6px]">
-                    <h4 class="text-accent text-[35px] font-bold">Html and Css</h4>
-                    <p class="w-[60%] max-lg:w-full">
-                        HTML (HyperText Markup Language) defines the structure of web pages, including elements like text, images, links, and forms.
-                        CSS (Cascading Style Sheets) is used for styling HTML elements, allowing customization of colors, fonts, sizes, and layouts.
-                        Together, they form the foundation of web design, enabling the creation of visually appealing and user-friendly websites.
-                    </p>
-                    <p class="py-[3px]">
-                        <i class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"></i>
-                        Separation of Structure and Presentation.
-                    </p>
-                    <p class="py-[3px]">
-                        <i class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"></i>
-                        Responsive Design.
-                    </p>
-                    <p class="py-[3px]">
-                        <i class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"></i>
-                        Flexibility and Customization.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Cert 2 -->
-            <div class="flex py-[40px] max-lg:py-[30px] max-lg:flex-wrap max-lg:justify-center">
-                <div class="w-[90%] max-lg:w-full">
-                    <img src="Assets/Images/daneshjooyar-En-certificate-17255-algorithm-and-flowchart-for-beginners.jpeg"
-                         alt="daneshjooyar-En-certificate-17255-algorithm-and-flowchart"
-                         class="w-full max-w-[500px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] max-lg:w-full">
-                </div>
-                <div class="text-muted w-full flex flex-col justify-center px-[15px] py-[6px]">
-                    <h4 class="text-accent text-[35px] font-bold">algorithm and flowchart</h4>
-                    <p class="w-[60%] max-lg:w-full">
-                        <b>Algorithm</b> is a step-by-step and well-defined set of instructions used to solve a problem or perform a specific task.
-                        It clearly specifies the order of operations and ensures that, when followed correctly, the desired result is achieved.
-                        <b>Flowchart</b> is a graphical representation of an algorithm that uses symbols and arrows to illustrate each step of the process.
-                        It helps in better understanding, analyzing, and organizing the logic of a solution.
-                        Together, algorithms and flowcharts form the foundation of problem-solving and programming.
-                    </p>
-                    <p class="py-[3px]">
-                        <i class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"></i>
-                        The steps are clear and easy to understand.
-                    </p>
-                    <p class="py-[3px]">
-                        <i class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"></i>
-                        The solution is presented in an ordered, logical sequence.
-                    </p>
-                    <p class="py-[3px]">
-                        <i class="fa-solid fa-globe text-accent [animation:certRotate_1s_ease-in-out_80ms_infinite] text-[20px] py-[10px]"></i>
-                        They help analyze and solve problems effectively in programming.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ── Contact ───────────────────────────────────────── -->
-    <section class="py-[70px]" id="contact">
-        <div class="w-3/4 mx-auto flex justify-around max-lg:flex-wrap max-lg:gap-10">
-            <!-- Form -->
-            <div class="w-[45%] max-lg:w-full">
-                <form class="bg-[rgba(178,171,171,0.237)] p-[40px_35px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] rounded-xl backdrop-blur-[2px]">
-                    <span class="block text-[28px] font-semibold mb-[30px]"><i class="fa-solid fa-paper-plane mr-2 text-accent"></i>Get In Touch</span>
-                    <input type="text" placeholder="Your Name"
-                           class="block w-full box-border py-[10px] px-[10px] my-[5px] caret-accent rounded-xl
-                                  border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted
-                                  transition-[border-color,box-shadow] duration-[250ms]
-                                  focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]">
-                    <input type="email" placeholder="Your Email"
-                           class="block w-full box-border py-[10px] px-[10px] my-[5px] caret-accent rounded-xl
-                                  border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted
-                                  transition-[border-color,box-shadow] duration-[250ms]
-                                  focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]">
-                    <input type="text" placeholder="Your Phone"
-                           class="block w-full box-border py-[10px] px-[10px] my-[5px] caret-accent rounded-xl
-                                  border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted
-                                  transition-[border-color,box-shadow] duration-[250ms]
-                                  focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]">
-                    <textarea rows="10" placeholder="Write Message"
-                              class="block w-full box-border py-[15px] px-[10px] my-[5px] caret-accent rounded-xl
-                                     border-[1.5px] border-[rgba(43,255,0,0.35)] outline-none bg-transparent text-text placeholder:text-muted
-                                     transition-[border-color,box-shadow] duration-[250ms]
-                                     focus:border-accent focus:shadow-[0_0_0_3px_rgba(43,255,0,0.15)]"></textarea>
-                    <span>
-                        <input type="submit" value="Send Message"
-                               class="cursor-pointer relative flex justify-center items-center mt-5
-                                      bottom-[0.4em] w-[8.25em] h-[2.5em] bg-card text-[1.5em] text-white
-                                      border-[0.08em] border-white rounded-[0.2em]
-                                      shadow-[0_0.4em_0.1em_0.019em_#fff]
-                                      transition-all duration-[1000ms]
-                                      active:translate-y-[0.4em] active:shadow-none active:duration-500">
-                    </span>
-                </form>
-            </div>
-            <!-- Info -->
-            <div class="w-[45%] max-lg:w-full">
-                <div class="mb-[45px]">
-                    <span class="text-[#73767c] block"><i class="fa-solid fa-envelope mr-2"></i>EMAIL</span>
-                    <span class="text-accent block mt-[10px]">efn1385@gmail.com</span>
-                </div>
-                <div class="mb-[45px]">
-                    <span class="text-[#73767c] block"><i class="fa-solid fa-phone mr-2"></i>PHONE</span>
-                    <span class="text-accent block mt-[10px]">+98 936 999 3265</span>
-                </div>
-                <div class="mb-[45px]">
-                    <span class="text-[#73767c] block"><i class="fa-solid fa-location-dot mr-2"></i>ADDRESS</span>
-                    <address class="text-accent block mt-[10px] not-italic">Iran Isfahan</address>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Footer ────────────────────────────────────────── -->
-    <footer class="bg-[rgb(34,155,94)] py-[70px]">
-        <div class="w-3/4 mx-auto">
-            <ul class="list-none flex justify-center mb-[35px] p-0">
-                <li class="inline-block"><a href="" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-twitter"></i></a></li>
-                <li class="inline-block"><a href="https://github.com/erfanhadi" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-github"></i></a></li>
-                <li class="inline-block"><a href="" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-instagram"></i></a></li>
-                <li class="inline-block"><a href="https://www.linkedin.com/in/hero-hadi-ab7557357/" class="text-muted no-underline text-[35px] mx-[15px] hover:text-accent"><i class="fa-brands fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-        <div class="text-center text-white mx-[15px]">
-            <p class="my-[10px]">
-                <i class="fa-regular fa-copyright"></i> 2025 erfan hadi. All Rights Reserved.
-                Designed & <a href="" class="no-underline text-muted hover:text-accent">Bootstrap templates</a> by erfan hadi
-            </p>
-            <p class="my-[10px]">
-                <a href="" class="no-underline text-muted hover:text-accent"><i class="fa-solid fa-code"></i></a>
-                develope by <a href="" class="no-underline text-muted hover:text-accent">erfan hadi</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="Assets/Js/script.js"></script>
-</body>
+        <script src="Assets/Js/script.js"></script>
+    </body>
 </html>
