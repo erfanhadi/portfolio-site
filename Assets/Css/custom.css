@@ -248,6 +248,217 @@ body::after {
     opacity: 0;
 }
 
+/* ── Mobile Menu Overlay ────────────────────────────────── */
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 18, 35, 0.97) 0%,
+        rgba(1, 40, 8, 0.97) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    clip-path: circle(0% at calc(100% - 52px) 37px);
+    transition: clip-path 0.65s cubic-bezier(0.77, 0, 0.18, 1);
+    pointer-events: none;
+}
+.mobile-overlay.open {
+    clip-path: circle(150% at calc(100% - 52px) 37px);
+    pointer-events: all;
+}
+
+/* glow orb behind menu */
+.mobile-overlay::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+        circle,
+        rgba(43, 255, 0, 0.08) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+}
+.mobile-overlay::after {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+        circle,
+        rgba(0, 32, 63, 0.5) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* nav links inside overlay */
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.mobile-nav-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    width: 100%;
+    max-width: 360px;
+}
+.mobile-overlay.open .mobile-nav-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+.mobile-overlay.open .mobile-nav-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
+.mobile-overlay.open .mobile-nav-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.29s; }
+.mobile-overlay.open .mobile-nav-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.36s; }
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 28px;
+    text-decoration: none;
+    color: rgba(255, 230, 230, 0.6);
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.mobile-nav-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(43, 255, 0, 0.06),
+        rgba(119, 253, 92, 0.03)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+}
+.mobile-nav-link:hover::before,
+.mobile-nav-link:active::before {
+    opacity: 1;
+}
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+    color: #2bff00;
+    border-color: rgba(43, 255, 0, 0.25);
+    transform: translateX(6px);
+}
+
+.mobile-nav-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: rgba(43, 255, 0, 0.5);
+    min-width: 28px;
+}
+.mobile-nav-label {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+/* mobile menu footer */
+.mobile-menu-footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+.mobile-overlay.open .mobile-menu-footer {
+    opacity: 1;
+    transform: translateY(0);
+}
+.mobile-menu-footer a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(43, 255, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 230, 230, 0.5);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.mobile-menu-footer a:hover {
+    border-color: rgba(43, 255, 0, 0.6);
+    color: #2bff00;
+    box-shadow: 0 0 16px rgba(43, 255, 0, 0.2);
+}
+
+
+/* ── Hamburger → X animation ────────────────────────────── */
+.hamburger-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    background: rgba(43, 255, 0, 0.08);
+    border: 1px solid rgba(43, 255, 0, 0.2);
+    border-radius: 10px;
+    padding: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1001;
+}
+.hamburger-btn:hover {
+    background: rgba(43, 255, 0, 0.15);
+    border-color: rgba(43, 255, 0, 0.5);
+}
+.hamburger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(0.77, 0, 0.18, 1);
+    transform-origin: center;
+}
+.hamburger-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.hamburger-btn.active {
+    background: rgba(43, 255, 0, 0.12);
+    border-color: rgba(43, 255, 0, 0.4);
+}
+
 /* ═══════════════════════════════════════════════════════════
    LOADER  —  kept entirely in CSS (pseudo-elements + IDs)
    ═══════════════════════════════════════════════════════════ */

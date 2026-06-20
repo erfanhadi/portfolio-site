@@ -62,66 +62,97 @@
         <nav
             class="fixed top-0 left-0 w-full z-[1000] py-[15px] bg-[rgba(34,155,94,0.438)] backdrop-blur-[4px]"
         >
-            <div class="w-3/4 mx-auto flex justify-between">
+            <div class="w-3/4 mx-auto flex justify-between items-center">
                 <div class="text-[35px] font-bold">
-                    <a href="" class="text-white no-underline hover:text-accent"
+                    <a href="index.html" class="text-white no-underline hover:text-accent"
                         ><i class="fa-solid fa-laptop-code"></i>erfan</a
                     >
                 </div>
-                <div class="flex items-center">
-                    <!-- desktop links -->
-                    <a
-                        href="index.html"
-                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
-                    >
-                        <p class="text-xl font-bold">HOME</p>
-                    </a>
-                    <a
-                        href="index.html#Certifications"
-                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
-                    >
-                        <p class="text-xl font-bold">CERTIFICATIONS</p>
-                    </a>
-                    <a
-                        href="portfolios.html"
-                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
-                    >
-                        <p class="text-xl font-bold">PORTFOLIOS</p>
-                    </a>
-                    <a
-                        href="index.html#contact"
-                        class="px-[10px] text-white no-underline hover:text-accent max-lg:hidden"
-                    >
-                        <p class="text-xl font-bold">CONTACT</p>
-                    </a>
-                    <!-- mobile icon links -->
-                    <div
-                        class="hidden max-lg:flex gap-[15px] text-[35px] font-bold"
-                    >
-                        <a
-                            href="index.html"
-                            class="text-white no-underline hover:text-accent"
-                            ><i class="fa-solid fa-house-chimney"></i
-                        ></a>
-                        <a
-                            href="index.html#Certifications"
-                            class="text-white no-underline hover:text-accent"
-                            ><i class="fa-solid fa-stamp"></i
-                        ></a>
-                        <a
-                            href="portfolios.html"
-                            class="text-white no-underline hover:text-accent"
-                            ><i class="fa-solid fa-business-time"></i
-                        ></a>
-                        <a
-                            href="index.html#contact"
-                            class="text-white no-underline hover:text-accent"
-                            ><i class="fa-solid fa-phone"></i
-                        ></a>
-                    </div>
-                </div>
+                <!-- hamburger button -->
+                <button id="nav-toggle" class="hamburger-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
+
+        <!-- ── Mobile Menu Overlay ────────────────────────── -->
+        <div id="mobile-menu" class="mobile-overlay">
+            <nav class="mobile-nav-links">
+                <div class="mobile-nav-item">
+                    <a href="index.html" class="mobile-nav-link">
+                        <span class="mobile-nav-num">01</span>
+                        <span class="mobile-nav-label">HOME</span>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="index.html#Certifications" class="mobile-nav-link">
+                        <span class="mobile-nav-num">02</span>
+                        <span class="mobile-nav-label">CERTIFICATIONS</span>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="portfolios.html" class="mobile-nav-link">
+                        <span class="mobile-nav-num">03</span>
+                        <span class="mobile-nav-label">PORTFOLIOS</span>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="index.html#contact" class="mobile-nav-link">
+                        <span class="mobile-nav-num">04</span>
+                        <span class="mobile-nav-label">CONTACT</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="mobile-menu-footer">
+                <a href="https://github.com/erfanhadi" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/erfanhadi" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:efn1385@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <script>
+            const navToggle = document.getElementById('nav-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function openMenu() {
+                navToggle.classList.add('active');
+                mobileMenu.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                navToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            navToggle.addEventListener('click', () => {
+                mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // swipe gestures (mobile only)
+            let touchStartX = 0;
+            let touchStartY = 0;
+            const SWIPE_THRESHOLD = 60;
+
+            document.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+
+            document.addEventListener('touchend', e => {
+                if (window.innerWidth >= 1024) return;
+                const dx = e.changedTouches[0].clientX - touchStartX;
+                const dy = e.changedTouches[0].clientY - touchStartY;
+                if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dy) > Math.abs(dx)) return;
+                if (dx < 0 && !mobileMenu.classList.contains('open')) openMenu();
+                if (dx > 0 && mobileMenu.classList.contains('open')) closeMenu();
+            }, { passive: true });
+        </script>
 
         <!-- ── Header / Hero ────────────────────────────────── -->
         <header
