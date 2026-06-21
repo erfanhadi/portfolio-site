@@ -155,7 +155,7 @@
 
         <!-- ── Projects ─────────────────────────────────────── -->
         <section class="pt-[100px]">
-            <div class="text-center mb-8">
+            <div class="text-center mb-8" id="p-heading">
                 <h4 class="mb-2 text-text font-bold">
                     <i class="fa-solid fa-toolbox mr-2 text-accent"></i>TOOLS &
                     PROJECTS
@@ -170,7 +170,7 @@
             </div>
 
             <!-- Tools list -->
-            <div class="flex justify-center p-[30px] rounded-[15px] mb-8">
+            <div class="flex justify-center p-[30px] rounded-[15px] mb-8" id="p-tools">
                 <ul
                     class="flex flex-wrap gap-5 list-none p-0 max-w-[800px] justify-center"
                 >
@@ -225,7 +225,7 @@
                 </ul>
             </div>
 
-            <div class="text-center mb-8">
+            <div class="text-center mb-8" id="p-subheading">
                 <p class="text-muted">
                     <i class="fa-solid fa-rocket mr-1 text-accent"></i>Check out
                     my recent projects below.
@@ -237,6 +237,7 @@
                 class="flex justify-evenly items-center flex-wrap p-[30px] my-[30px] mx-auto"
             >
                 <div
+                    id="p-card-0"
                     class="project-card group relative bg-[rgba(255,255,255,0.04)] backdrop-blur-[1.5px] border border-[rgba(80,255,103,0.25)] text-muted rounded-[22px] overflow-hidden text-center transition-all duration-[400ms] cursor-pointer shadow-[0_0_25px_rgba(255,80,120,0.15)] pb-[5px] my-[10px] max-w-[350px] max-h-[400px] hover:-translate-y-[10px] hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(100,255,80,0.5)] max-md:w-[310px] max-sm:w-[310px]"
                 >
                     <div>
@@ -258,7 +259,7 @@
                             class="hidden object-cover group-hover:block"
                         ></video>
                         <h3
-                            class="my-[15px_0_5px] text-[1.2rem] text-accent-2 transition-colors duration-300 group-hover:text-accent"
+                            class="my-[15px_0_5px] mt-2 text-[1.2rem] text-accent-2 transition-colors duration-300 group-hover:text-accent group-hover:mt-5.5"
                         >
                             <a href="https://erfanhadi.dev/"></a>Portfolio
                             WebSite
@@ -359,5 +360,44 @@
         </footer>
 
         <script src="Assets/Js/script.js"></script>
+
+        <script>
+            (function () {
+                var revealIds = ['p-heading', 'p-tools', 'p-subheading', 'p-card-0'];
+                var TRANSITION = 'opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1)';
+
+                // همه رو از اول مخفی کن
+                revealIds.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (!el) return;
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(40px)';
+                    el.style.transition = TRANSITION;
+                });
+
+                function revealAll() {
+                    revealIds.forEach(function (id, i) {
+                        var el = document.getElementById(id);
+                        if (!el) return;
+                        setTimeout(function () {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }, i * 130);
+                    });
+                }
+
+                // MutationObserver — هر وقت loader مخفی شد (توسط هر کسی)، reveal کن
+                var loader = document.querySelector('.loader_container');
+                if (loader) {
+                    var mo = new MutationObserver(function () {
+                        if (loader.style.display === 'none') {
+                            mo.disconnect();
+                            revealAll();
+                        }
+                    });
+                    mo.observe(loader, { attributes: true, attributeFilter: ['style'] });
+                }
+            })();
+        </script>
     </body>
 </html>

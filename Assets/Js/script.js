@@ -1,10 +1,39 @@
-let Loader = document.querySelector('.loader_container');
-window.addEventListener('load' , function(){
-    Loader.classList.add('hide');
-    Loader.addEventListener('transitionend', function(){
-    Loader.style.display ='none';
-    })
-})
+/* ── Loader exit + hero reveal ─────────────────────────── */
+window.addEventListener('load', function () {
+    var loader = document.querySelector('.loader_container');
+    if (!loader) return;
+
+    loader.classList.add('hiding');
+
+    // 1150ms = animation duration (1.1s) + small buffer
+    setTimeout(function () {
+        loader.style.display = 'none';
+
+        // Hero items slide in after loader leaves (index.html only)
+        var heroLeft  = document.querySelector('.reveal-left');
+        var heroRight = document.querySelector('.reveal-right');
+        if (heroLeft)  { setTimeout(function(){ heroLeft.classList.add('in');  }, 0);   }
+        if (heroRight) { setTimeout(function(){ heroRight.classList.add('in'); }, 120); }
+    }, 1150);
+});
+
+/* ── Scroll-based reveal (IntersectionObserver) ────────── */
+document.addEventListener('DOMContentLoaded', function () {
+    var revealEls = document.querySelectorAll('.reveal-up');
+    if (!revealEls.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(function (el) { observer.observe(el); });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     initOrbitAnimations();
     initTypingEffect();
