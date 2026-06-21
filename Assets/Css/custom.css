@@ -1,3 +1,43 @@
+/* ── Custom Cursor ────────────────────────────────────── */
+* { cursor: none !important; }
+
+#cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: rgba(43, 255, 0, 1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+}
+#cursor-ring {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(43, 255, 0, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999998;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, opacity 0.2s ease;
+    box-shadow: 0 0 8px rgba(43, 255, 0, 0.2);
+}
+
+/* hover روی کلیکی‌ها */
+body.cursor-hover #cursor-dot {
+    width: 6px;
+    height: 6px;
+    opacity: 0.6;
+}
+body.cursor-hover #cursor-ring {
+    width: 52px;
+    height: 52px;
+    border-color: rgba(43, 255, 0, 1);
+    box-shadow: 0 0 16px rgba(43, 255, 0, 0.35);
+}
+
 /* ── Fonts ────────────────────────────────────────────── */
 @font-face {
     font-family: "Space Grotesk";

@@ -1,3 +1,36 @@
+/* ── Custom Trailing Cursor ────────────────────────────── */
+(function () {
+    var dot  = document.createElement('div'); dot.id  = 'cursor-dot';
+    var ring = document.createElement('div'); ring.id = 'cursor-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    var mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    var rx = mx, ry = my;
+
+    document.addEventListener('mousemove', function (e) {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+    });
+
+    (function lerp() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+        requestAnimationFrame(lerp);
+    })();
+
+    var hoverEls = 'a, button, [role="button"], input, textarea, select, label, .project-card, .hamburger-btn';
+    document.addEventListener('mouseover', function (e) {
+        if (e.target.closest(hoverEls)) document.body.classList.add('cursor-hover');
+    });
+    document.addEventListener('mouseout', function (e) {
+        if (e.target.closest(hoverEls)) document.body.classList.remove('cursor-hover');
+    });
+})();
+
 /* ── Loader exit + hero reveal ─────────────────────────── */
 window.addEventListener('load', function () {
     var loader = document.querySelector('.loader_container');
