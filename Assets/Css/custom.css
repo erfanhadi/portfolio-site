@@ -1,3 +1,10 @@
+/* ── Hide custom cursor on touch devices ─────────────── */
+@media (hover: none) and (pointer: coarse) {
+    * { cursor: auto !important; }
+    #cursor-dot,
+    #cursor-ring { display: none !important; }
+}
+
 /* ── Text Selection ───────────────────────────────────── */
 ::selection {
     background: rgba(43, 255, 0, 0.25);
