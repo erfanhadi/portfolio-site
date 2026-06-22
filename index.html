@@ -487,6 +487,143 @@
             </div>
         </section>
 
+        <!-- ── Timeline ─────────────────────────────────────── -->
+        <section id="timeline" class="timeline-section">
+
+            <!-- عنوان -->
+            <div class="relative z-10 pt-[100px] pb-[40px] text-center">
+                <p class="text-accent text-[0.9rem] tracking-[4px] uppercase mb-3 font-semibold">Process</p>
+                <h2 class="text-[2.8rem] font-bold text-white max-md:text-[2rem] leading-tight">
+                    How I Build a Website
+                </h2>
+                <p class="text-muted mt-4 text-[1rem] max-w-[420px] mx-auto leading-relaxed">
+                    From the first idea to the final delivery — every step, crafted with precision.
+                </p>
+            </div>
+
+            <!-- مسیر SVG + نودها + کارت‌ها -->
+            <div class="timeline-path-wrapper">
+
+                <svg class="timeline-svg" viewBox="0 0 1000 2500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="tl-glow" x="-80%" y="-80%" width="260%" height="260%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="tl-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%"   stop-color="#2bff00" stop-opacity="0.2"/>
+                            <stop offset="40%"  stop-color="#2bff00" stop-opacity="1"/>
+                            <stop offset="100%" stop-color="#2bff00" stop-opacity="0.2"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- مسیر راهنمای کم‌رنگ -->
+                    <path class="tl-track" d="M 500 30 C 500 180,630 280,630 500 C 630 720,370 820,370 1000 C 370 1180,630 1280,630 1500 C 630 1720,370 1820,370 2000 C 370 2220,500 2350,500 2470"/>
+                    <!-- مسیر متحرک با glow -->
+                    <path id="timeline-path" class="tl-draw" d="M 500 30 C 500 180,630 280,630 500 C 630 720,370 820,370 1000 C 370 1180,630 1280,630 1500 C 630 1720,370 1820,370 2000 C 370 2220,500 2350,500 2470" filter="url(#tl-glow)"/>
+                </svg>
+
+                <!-- نودها — عدد count-up -->
+                <div class="tl-node" style="left:63%;top:20%">
+                    <div class="tl-node-ring"></div>
+                    <div class="tl-node-ring tl-ring-delay"></div>
+                    <div class="tl-node-core"><span class="tl-node-counter" data-target="1">00</span></div>
+                </div>
+                <div class="tl-node" style="left:37%;top:40%">
+                    <div class="tl-node-ring"></div>
+                    <div class="tl-node-ring tl-ring-delay"></div>
+                    <div class="tl-node-core"><span class="tl-node-counter" data-target="2">00</span></div>
+                </div>
+                <div class="tl-node" style="left:63%;top:60%">
+                    <div class="tl-node-ring"></div>
+                    <div class="tl-node-ring tl-ring-delay"></div>
+                    <div class="tl-node-core"><span class="tl-node-counter" data-target="3">00</span></div>
+                </div>
+                <div class="tl-node" style="left:37%;top:80%">
+                    <div class="tl-node-ring"></div>
+                    <div class="tl-node-ring tl-ring-delay"></div>
+                    <div class="tl-node-core"><span class="tl-node-counter" data-target="4">00</span></div>
+                </div>
+
+                <!-- خطوط اتصال نود به کارت -->
+                <div class="tl-conn tl-conn-r" style="top:20%"></div>
+                <div class="tl-conn tl-conn-l" style="top:40%"></div>
+                <div class="tl-conn tl-conn-r" style="top:60%"></div>
+                <div class="tl-conn tl-conn-l" style="top:80%"></div>
+
+                <!-- کارت ۱ -->
+                <div class="tl-card tl-card-right" style="top:20%">
+                    <i class="fa-solid fa-lightbulb tl-card-icon"></i>
+                    <div class="tl-card-tag">Discovery</div>
+                    <h3 class="tl-title">Idea & Research</h3>
+                    <p class="tl-desc" data-text="Understanding the client's goals, researching the market, and defining the full scope and vision of the project."></p>
+                    <div class="tl-chips">
+                        <span>Strategy</span><span>Research</span><span>Planning</span>
+                    </div>
+                </div>
+
+                <!-- کارت ۲ -->
+                <div class="tl-card tl-card-left" style="top:40%">
+                    <i class="fa-solid fa-pen-ruler tl-card-icon"></i>
+                    <div class="tl-card-tag">Design</div>
+                    <h3 class="tl-title">UI/UX Design</h3>
+                    <p class="tl-desc" data-text="Crafting wireframes, high-fidelity mockups, and interactive prototypes — making every pixel intentional."></p>
+                    <div class="tl-chips">
+                        <span>Wireframes</span><span>Mockups</span><span>Figma</span>
+                    </div>
+                </div>
+
+                <!-- کارت ۳ -->
+                <div class="tl-card tl-card-right" style="top:60%">
+                    <i class="fa-solid fa-code tl-card-icon"></i>
+                    <div class="tl-card-tag">Development</div>
+                    <h3 class="tl-title">Clean Code</h3>
+                    <p class="tl-desc" data-text="Building a fast, responsive, and accessible frontend with smooth animations and robust functionality."></p>
+                    <div class="tl-chips">
+                        <span>HTML/CSS</span><span>JavaScript</span><span>React</span>
+                    </div>
+                </div>
+
+                <!-- کارت ۴ -->
+                <div class="tl-card tl-card-left" style="top:80%">
+                    <i class="fa-solid fa-rocket tl-card-icon"></i>
+                    <div class="tl-card-tag">Delivery</div>
+                    <h3 class="tl-title">Launch & Handoff</h3>
+                    <p class="tl-desc" data-text="Testing on all devices, optimizing performance, and delivering the polished final product to the client."></p>
+                    <div class="tl-chips">
+                        <span>Testing</span><span>Launch</span><span>Handoff</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- اینیکاتور اسکرول -->
+            <div class="tl-scroll-hint" id="tl-scroll-hint">
+                <!-- دسکتاپ: موس -->
+                <div class="tl-hint-desktop">
+                    <div class="tl-scroll-mouse">
+                        <div class="tl-scroll-wheel"></div>
+                    </div>
+                    <span>Scroll to explore</span>
+                </div>
+                <!-- موبایل: انگشت -->
+                <div class="tl-hint-mobile">
+                    <div class="tl-scroll-mouse">
+                        <div class="tl-scroll-wheel"></div>
+                    </div>
+                    <div class="tl-swipe-arrows">
+                        <span class="tl-arr tl-arr-1"></span>
+                        <span class="tl-arr tl-arr-2"></span>
+                        <span class="tl-arr tl-arr-3"></span>
+                    </div>
+                    <span>Swipe down</span>
+                </div>
+            </div>
+
+        </section>
+
         <!-- ── Contact ───────────────────────────────────────── -->
         <section class="py-[70px] reveal-up" id="contact">
             <div
@@ -616,5 +753,147 @@
         </footer>
 
         <script src="Assets/Js/script.js"></script>
+
+        <!-- ── Progress Bar ─────────────────────────────────── -->
+        <div id="tl-progress" class="tl-progress-bar"></div>
+
+        <!-- ── Timeline Script ───────────────────────────────── -->
+        <script>
+        (function () {
+            var section   = document.getElementById('timeline');
+            var path      = document.getElementById('timeline-path');
+            var hint      = document.getElementById('tl-scroll-hint');
+            if (!section || !path) return;
+
+            var len = path.getTotalLength();
+            path.style.strokeDasharray  = len;
+            path.style.strokeDashoffset = len;
+
+            var nodes      = section.querySelectorAll('.tl-node');
+            var cards      = section.querySelectorAll('.tl-card');
+            var conns      = section.querySelectorAll('.tl-conn');
+            var descs      = section.querySelectorAll('.tl-desc');
+            var wrapper    = section.querySelector('.timeline-path-wrapper');
+            var progBar    = document.getElementById('tl-progress');
+            var thresholds = [0.18, 0.38, 0.58, 0.78];
+
+            /* ذخیره متن desc ها برای typewriter */
+            descs.forEach(function(d) {
+                d._fullText = d.getAttribute('data-text') || '';
+                d._typed    = false;
+                d.textContent = '';
+            });
+
+            /* count-up state */
+            nodes.forEach(function(n) { n._counted = false; });
+
+            /* ساخت ذرات متحرک روی مسیر */
+            var particles = [];
+            if (wrapper) {
+                for (var pi = 0; pi < 5; pi++) {
+                    var pel = document.createElement('div');
+                    pel.className = 'tl-particle';
+                    wrapper.appendChild(pel);
+                    particles.push(pel);
+                }
+            }
+
+            function typeText(desc) {
+                if (desc._typed) return;
+                desc._typed = true;
+                var txt = desc._fullText;
+                var i = 0;
+                desc.classList.add('tl-typing');
+                var timer = setInterval(function() {
+                    desc.textContent = txt.slice(0, i + 1);
+                    i++;
+                    if (i >= txt.length) {
+                        clearInterval(timer);
+                        desc.classList.remove('tl-typing');
+                    }
+                }, 18);
+            }
+
+            function countUp(node) {
+                if (node._counted) return;
+                node._counted = true;
+                var counter = node.querySelector('.tl-node-counter');
+                if (!counter) return;
+                var target = parseInt(counter.getAttribute('data-target'), 10);
+                var cur = 0;
+                var timer = setInterval(function() {
+                    cur++;
+                    counter.textContent = cur < 10 ? '0' + cur : '' + cur;
+                    if (cur >= target) clearInterval(timer);
+                }, 90);
+            }
+
+            function updateParticles(progress) {
+                if (!particles.length || !wrapper) return;
+                var drawnLen = len * progress;
+                var spacing  = 140;
+                var wW = wrapper.offsetWidth;
+                var wH = wrapper.offsetHeight;
+                particles.forEach(function(pel, i) {
+                    var pLen = drawnLen - (i + 1) * spacing;
+                    if (pLen < 0) { pel.style.opacity = '0'; return; }
+                    var pt = path.getPointAtLength(Math.min(pLen, len));
+                    pel.style.left    = (pt.x / 1000 * wW) + 'px';
+                    pel.style.top     = (pt.y / 2500 * wH) + 'px';
+                    pel.style.opacity = String(Math.max(0.1, 1 - i * 0.18));
+                });
+            }
+
+            function update() {
+                var rect     = section.getBoundingClientRect();
+                var vh       = window.innerHeight;
+                var sH       = section.offsetHeight;
+                var scrolled = -rect.top;
+                var total    = sH - vh;
+                var progress = Math.max(0, Math.min(1, scrolled / total));
+
+                path.style.strokeDashoffset = len * (1 - progress);
+                updateParticles(progress);
+
+                if (progBar) {
+                    if (progress > 0 && progress < 1) {
+                        progBar.classList.add('tl-prog-active');
+                        progBar.style.width = (progress * 100) + '%';
+                    } else {
+                        progBar.classList.remove('tl-prog-active');
+                    }
+                }
+
+                if (hint) {
+                    var approaching = rect.top > 0 && rect.top < vh;
+                    var justEntered = rect.top <= 0 && progress < 0.10;
+                    if (approaching || justEntered) {
+                        hint.classList.add('tl-hint-visible');
+                        hint.classList.remove('tl-hint-hidden');
+                    } else {
+                        hint.classList.remove('tl-hint-visible');
+                        hint.classList.add('tl-hint-hidden');
+                    }
+                }
+
+                thresholds.forEach(function(t, i) {
+                    if (progress >= t) {
+                        if (nodes[i]) { nodes[i].classList.add('tl-visible'); countUp(nodes[i]); }
+                        if (cards[i]) cards[i].classList.add('tl-visible');
+                        if (conns[i]) conns[i].classList.add('tl-visible');
+                        if (descs[i]) typeText(descs[i]);
+                    } else {
+                        if (nodes[i]) nodes[i].classList.remove('tl-visible');
+                        if (cards[i]) cards[i].classList.remove('tl-visible');
+                        if (conns[i]) conns[i].classList.remove('tl-visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        })();
+        </script>
+
     </body>
 </html>
