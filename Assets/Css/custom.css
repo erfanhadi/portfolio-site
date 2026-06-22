@@ -1028,3 +1028,520 @@ body::after {
         opacity: 0;
     }
 }
+
+/* ── Timeline Section ─────────────────────────────────── */
+.timeline-section {
+    position: relative;
+    min-height: 300vh;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* ── Scroll Hint ──────────────────────────────────────── */
+.tl-scroll-hint {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 500;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.tl-scroll-hint.tl-hint-visible {
+    opacity: 1;
+}
+
+.tl-scroll-hint.tl-hint-hidden {
+    opacity: 0;
+}
+
+.tl-scroll-hint span {
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(43,255,0,0.55);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.tl-scroll-mouse {
+    width: 22px;
+    height: 34px;
+    border: 1.5px solid rgba(43,255,0,0.4);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.tl-scroll-wheel {
+    width: 3px;
+    height: 6px;
+    background: #2bff00;
+    border-radius: 2px;
+    animation: tlWheelBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes tlWheelBounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    60%       { transform: translateY(10px); opacity: 0.2; }
+}
+
+/* ── نمایش دسکتاپ / موبایل ─────────────────────────── */
+.tl-hint-desktop { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.tl-hint-mobile  { display: none; flex-direction: column; align-items: center; gap: 8px; }
+
+/* ── انیمیشن دست موبایل ───────────────────────────── */
+.tl-swipe-hand {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tl-swipe-finger-icon {
+    font-size: 2rem;
+    color: rgba(43,255,0,0.85);
+    filter: drop-shadow(0 0 8px rgba(43,255,0,0.6));
+    animation: tlFingerScroll 1.6s ease-in-out infinite;
+}
+
+@keyframes tlFingerScroll {
+    0%, 100% { transform: translateY(-6px); }
+    50%      { transform: translateY(8px); }
+}
+
+/* فلش‌های پایین دست */
+.tl-swipe-arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.tl-arr {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-right: 1.5px solid rgba(43,255,0,0.7);
+    border-bottom: 1.5px solid rgba(43,255,0,0.7);
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+.tl-arr-1 { animation: tlArrFade 2s ease-in-out infinite 0.1s; }
+.tl-arr-2 { animation: tlArrFade 2s ease-in-out infinite 0.3s; }
+.tl-arr-3 { animation: tlArrFade 2s ease-in-out infinite 0.5s; }
+
+@keyframes tlArrFade {
+    0%, 100% { opacity: 0; }
+    40%, 60%  { opacity: 0.85; }
+}
+
+/* ── SVG Path ─────────────────────────────────────────── */
+.timeline-path-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: calc(300vh - 260px);
+}
+
+.timeline-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tl-track {
+    stroke: rgba(43, 255, 0, 0.07);
+    stroke-width: 6;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.tl-draw {
+    stroke: #2bff00;
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+}
+
+/* ── Nodes ────────────────────────────────────────────── */
+.tl-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tl-node.tl-visible { opacity: 1; }
+
+.tl-node-core {
+    position: relative;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2bff00 0%, #1add00 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #030912;
+    font-size: 1.05rem;
+    box-shadow:
+        0 0 0 2px rgba(43,255,0,0.25),
+        0 0 20px rgba(43,255,0,0.55),
+        0 0 50px rgba(43,255,0,0.25),
+        0 0 100px rgba(43,255,0,0.1);
+}
+
+.tl-node-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(43, 255, 0, 0.45);
+    transform: translate(-50%, -50%);
+}
+
+.tl-node.tl-visible .tl-node-ring {
+    animation: tlRingPulse 2.8s cubic-bezier(0.2, 0, 0.6, 1) infinite;
+}
+
+.tl-node.tl-visible .tl-ring-delay {
+    animation-delay: 1.4s;
+}
+
+@keyframes tlRingPulse {
+    0%   { width: 48px; height: 48px; opacity: 0.7; }
+    100% { width: 110px; height: 110px; opacity: 0; }
+}
+
+/* ── Cards ────────────────────────────────────────────── */
+.tl-card {
+    position: absolute;
+    width: 38%;
+    border-radius: 20px;
+    padding: 30px 32px 28px;
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    background: linear-gradient(145deg,
+        rgba(255,255,255,0.045) 0%,
+        rgba(255,255,255,0.015) 100%);
+    box-shadow:
+        0 0 0 1px rgba(43,255,0,0.12),
+        0 24px 64px rgba(0,0,0,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.07),
+        inset 0 -1px 0 rgba(0,0,0,0.2);
+    opacity: 0;
+    transition:
+        opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+        transform 0.7s cubic-bezier(0.16,1,0.3,1),
+        box-shadow 0.3s ease;
+}
+
+.tl-card:hover {
+    box-shadow:
+        0 0 0 1px rgba(43,255,0,0.3),
+        0 24px 64px rgba(0,0,0,0.55),
+        0 0 40px rgba(43,255,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.09),
+        inset 0 -1px 0 rgba(0,0,0,0.2);
+}
+
+/* ── متغیر زاویه برای conic border ───────────────────── */
+@property --tl-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* نور دورانی روی لبه کارت */
+.tl-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from var(--tl-angle),
+        transparent 0%,
+        transparent 35%,
+        rgba(43,255,0,0.9) 50%,
+        transparent 65%,
+        transparent 100%
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.tl-card.tl-visible::before {
+    opacity: 1;
+    animation: tlBorderSpin 4s linear infinite;
+}
+
+@keyframes tlBorderSpin {
+    to { --tl-angle: 360deg; }
+}
+
+/* shimmer نوری داخل کارت */
+.tl-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        115deg,
+        transparent 25%,
+        rgba(255,255,255,0.035) 44%,
+        rgba(43,255,0,0.07) 50%,
+        rgba(255,255,255,0.035) 56%,
+        transparent 75%
+    );
+    background-size: 300% 100%;
+    background-position: -100% 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.tl-card.tl-visible::after {
+    animation: tlCardShimmer 5.5s ease-in-out infinite 0.8s;
+}
+
+@keyframes tlCardShimmer {
+    0%          { background-position: -100% 0; opacity: 0; }
+    8%          { opacity: 1; }
+    48%, 100%   { background-position: 250% 0;  opacity: 0; }
+}
+
+.tl-card-right {
+    left: 67%;
+    width: 31%;
+    transform: translateY(-50%) translateX(22px);
+}
+
+.tl-card-left {
+    right: 67%;
+    width: 31%;
+    transform: translateY(-50%) translateX(-22px);
+}
+
+.tl-card.tl-visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* آیکون کارت */
+.tl-card-icon {
+    position: absolute;
+    top: 20px; right: 22px;
+    font-size: 2rem;
+    color: rgba(43,255,0,0.18);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+.tl-card:hover .tl-card-icon {
+    color: rgba(43,255,0,0.45);
+    text-shadow: 0 0 18px rgba(43,255,0,0.35);
+}
+
+/* تگ بالای کارت */
+.tl-card-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #2bff00;
+    background: rgba(43,255,0,0.08);
+    border: 1px solid rgba(43,255,0,0.2);
+    border-radius: 30px;
+    padding: 4px 14px;
+    margin-bottom: 14px;
+}
+
+.tl-title {
+    color: #f0ece8;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+}
+
+.tl-desc {
+    color: rgba(220,200,200,0.65);
+    font-size: 0.88rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* چیپس‌ها */
+.tl-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tl-chips span {
+    font-size: 0.73rem;
+    padding: 4px 11px;
+    border-radius: 20px;
+    border: 1px solid rgba(43,255,0,0.18);
+    color: rgba(43,255,0,0.6);
+    background: rgba(43,255,0,0.04);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.3px;
+    transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+
+.tl-card:hover .tl-chips span {
+    border-color: rgba(43,255,0,0.3);
+    color: rgba(43,255,0,0.85);
+    background: rgba(43,255,0,0.07);
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .tl-hint-desktop { display: none; }
+    .tl-hint-mobile  { display: flex; }
+
+    /* نودها کوچک‌تر */
+    .tl-node-core {
+        width: 36px;
+        height: 36px;
+        font-size: 0.82rem;
+    }
+
+    @keyframes tlRingPulse {
+        0%   { width: 36px; height: 36px; opacity: 0.7; }
+        100% { width: 80px; height: 80px; opacity: 0; }
+    }
+
+    /* کارت‌ها: زیر نود، تمام عرض */
+    .tl-card,
+    .tl-card-right,
+    .tl-card-left {
+        left: 8% !important;
+        right: auto !important;
+        width: 84% !important;
+        padding: 18px 18px 16px !important;
+        border-radius: 14px;
+    }
+
+    .tl-card {
+        transform: translateY(52px) !important;
+    }
+
+    .tl-card.tl-visible {
+        opacity: 1;
+        transform: translateY(52px) !important;
+    }
+
+    .tl-step-num { font-size: 2rem; top: 12px; right: 14px; }
+    .tl-title    { font-size: 1rem; }
+    .tl-desc     { font-size: 0.82rem; margin-bottom: 12px; }
+    .tl-chips    { gap: 5px; }
+    .tl-chips span { font-size: 0.68rem; padding: 3px 9px; }
+
+    /* خطوط اتصال در موبایل: مخفی */
+    .tl-conn { display: none; }
+}
+
+/* ── Node Counter (شماره count-up) ───────────────────── */
+.tl-node-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #030912;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    user-select: none;
+}
+
+/* ── Connector Lines ──────────────────────────────────── */
+.tl-conn {
+    position: absolute;
+    height: 1.5px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.55s ease 0.25s;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.tl-conn.tl-visible { opacity: 1; }
+
+.tl-conn-r {
+    left: 63%;
+    width: 4%;
+    background: linear-gradient(to right, rgba(43,255,0,0.65), rgba(43,255,0,0.08));
+}
+
+.tl-conn-l {
+    left: 33%;
+    width: 4%;
+    background: linear-gradient(to left, rgba(43,255,0,0.65), rgba(43,255,0,0.08));
+}
+
+/* ── Progress Bar ─────────────────────────────────────── */
+.tl-progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(to right, rgba(43,255,0,0.25), #2bff00);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(43,255,0,0.5);
+    transition: width 0.12s linear, opacity 0.4s ease;
+}
+
+.tl-progress-bar.tl-prog-active { opacity: 1; }
+
+/* ── Particles ────────────────────────────────────────── */
+.tl-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2bff00;
+    box-shadow:
+        0 0 6px 2px rgba(43,255,0,0.7),
+        0 0 14px 4px rgba(43,255,0,0.35);
+    pointer-events: none;
+    z-index: 18;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+/* ── Typewriter Cursor ────────────────────────────────── */
+.tl-desc.tl-typing::after {
+    content: '|';
+    color: rgba(43,255,0,0.7);
+    animation: tlBlink 0.7s step-end infinite;
+    font-weight: 300;
+}
+
+@keyframes tlBlink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
