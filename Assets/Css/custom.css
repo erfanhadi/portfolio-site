@@ -105,12 +105,13 @@ html {
 body {
     font-family: "Space Grotesk", sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* ── Background star field (pseudo-elements) ────────────── */
+/* ── Background (کل صفحه) ────────────────────────────────── */
 body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -125,7 +126,7 @@ body::before {
 
 body::after {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -149,6 +150,32 @@ body::after {
     animation: stars 20s linear infinite;
     opacity: 0.3;
     z-index: -1;
+    pointer-events: none;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #2bff00, #119b04);
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(43,255,0,0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2bff00;
+    box-shadow: 0 0 14px rgba(43,255,0,0.8);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #119b04 rgba(0,0,0,0.25);
 }
 
 @keyframes stars {

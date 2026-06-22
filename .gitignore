@@ -10,6 +10,7 @@ Assets/video/
 
 # Claude Code local config
 .claude/
+CLAUDE.md
 
 # Node
 node_modules/
