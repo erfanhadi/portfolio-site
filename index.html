@@ -787,9 +787,12 @@
             /* count-up state */
             nodes.forEach(function(n) { n._counted = false; });
 
-            /* ساخت ذرات متحرک روی مسیر */
+            /* موبایل یا دسکتاپ */
+            var isMobile = window.innerWidth < 768;
+
+            /* ساخت ذرات — فقط دسکتاپ */
             var particles = [];
-            if (wrapper) {
+            if (!isMobile && wrapper) {
                 for (var pi = 0; pi < 5; pi++) {
                     var pel = document.createElement('div');
                     pel.className = 'tl-particle';
@@ -797,6 +800,10 @@
                     particles.push(pel);
                 }
             }
+
+            /* cache ابعاد wrapper */
+            var wW = wrapper ? wrapper.offsetWidth  : 0;
+            var wH = wrapper ? wrapper.offsetHeight : 0;
 
             function typeText(desc) {
                 if (desc._typed) return;
@@ -811,7 +818,7 @@
                         clearInterval(timer);
                         desc.classList.remove('tl-typing');
                     }
-                }, 18);
+                }, 22);
             }
 
             function countUp(node) {
@@ -829,11 +836,9 @@
             }
 
             function updateParticles(progress) {
-                if (!particles.length || !wrapper) return;
+                if (isMobile || !particles.length) return;
                 var drawnLen = len * progress;
                 var spacing  = 140;
-                var wW = wrapper.offsetWidth;
-                var wH = wrapper.offsetHeight;
                 particles.forEach(function(pel, i) {
                     var pLen = drawnLen - (i + 1) * spacing;
                     if (pLen < 0) { pel.style.opacity = '0'; return; }
@@ -843,6 +848,9 @@
                     pel.style.opacity = String(Math.max(0.1, 1 - i * 0.18));
                 });
             }
+
+            /* throttle اسکرول با requestAnimationFrame */
+            var ticking = false;
 
             function update() {
                 var rect     = section.getBoundingClientRect();
@@ -890,7 +898,17 @@
                 });
             }
 
-            window.addEventListener('scroll', update, { passive: true });
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        update();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
             update();
         })();
         </script>

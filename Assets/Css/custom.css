@@ -1445,6 +1445,22 @@ body::after {
 
 /* ── Mobile ───────────────────────────────────────────── */
 @media (max-width: 768px) {
+    /* ستاره‌ها روی موبایل متوقف می‌شوند */
+    body::after { animation: none; }
+
+    /* گرادیان دورانی کارت جای خود را به border ساده می‌دهد */
+    .tl-card::before {
+        background: none !important;
+        -webkit-mask: none !important;
+        mask: none !important;
+        border: 1px solid rgba(43,255,0,0.25);
+        padding: 0;
+        animation: none !important;
+    }
+
+    /* shimmer کارت غیرفعال */
+    .tl-card::after { animation: none !important; opacity: 0 !important; }
+
     .tl-hint-desktop { display: none; }
     .tl-hint-mobile  { display: flex; }
 
