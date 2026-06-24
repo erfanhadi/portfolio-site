@@ -1443,10 +1443,20 @@ body::after {
     background: rgba(43,255,0,0.07);
 }
 
+/* انیمیشن خودکار مسیر تایم‌لاین روی موبایل */
+@keyframes tlAutoDrawPath {
+    to { stroke-dashoffset: 0; }
+}
+
 /* ── Mobile ───────────────────────────────────────────── */
 @media (max-width: 768px) {
     /* ستاره‌ها روی موبایل متوقف می‌شوند */
     body::after { animation: none; }
+
+    /* وقتی section کلاس tl-autoplay بگیرد، مسیر رسم می‌شود */
+    #timeline.tl-autoplay #timeline-path {
+        animation: tlAutoDrawPath 2.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
 
     /* گرادیان دورانی کارت جای خود را به border ساده می‌دهد */
     .tl-card::before {

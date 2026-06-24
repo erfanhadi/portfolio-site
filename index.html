@@ -29,10 +29,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="Assets/Css/output.css" />
+        <link rel="preload" href="Assets/Fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="Assets/Fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
         <link
             rel="stylesheet"
             href="Assets/icons/fontawesome-free/css/all.min.css"
+            media="print"
+            onload="this.media='all'"
         />
+        <noscript><link rel="stylesheet" href="Assets/icons/fontawesome-free/css/all.min.css" /></noscript>
         <link
             rel="icon"
             href="Assets/Images/5818879735268838157.jpg"
@@ -406,6 +411,10 @@
                             src="Assets/Images/daneshjooyar-En-certificate-10484-html-css-training.jpeg"
                             alt="daneshjooyar-En-certificate-html-css-training"
                             class="w-full max-w-[500px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] max-lg:w-full"
+                            width="500"
+                            height="354"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
@@ -448,6 +457,10 @@
                             src="Assets/Images/daneshjooyar-En-certificate-17255-algorithm-and-flowchart-for-beginners.jpeg"
                             alt="daneshjooyar-En-certificate-17255-algorithm-and-flowchart"
                             class="w-full max-w-[500px] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.15)] max-lg:w-full"
+                            width="500"
+                            height="354"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
@@ -790,9 +803,41 @@
             /* موبایل یا دسکتاپ */
             var isMobile = window.innerWidth < 768;
 
+            /* cache ابعاد wrapper */
+            var wW = wrapper ? wrapper.offsetWidth  : 0;
+            var wH = wrapper ? wrapper.offsetHeight : 0;
+
+            /* ──────── موبایل: autoplay با IntersectionObserver ──────── */
+            if (isMobile) {
+                /* مسیر وقتی section وارد دید شد شروع به رسم می‌شود */
+                var pathObserver = new IntersectionObserver(function(entries) {
+                    if (!entries[0].isIntersecting) return;
+                    pathObserver.disconnect();
+                    section.classList.add('tl-autoplay');
+                }, { threshold: 0.05 });
+                pathObserver.observe(section);
+
+                /* هر کارت وقتی ۲۵٪ دیده شد ظاهر می‌شود */
+                var cardObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (!entry.isIntersecting) return;
+                        var card = entry.target;
+                        var i = Array.from(cards).indexOf(card);
+                        cardObserver.unobserve(card);
+                        if (nodes[i]) { nodes[i].classList.add('tl-visible'); countUp(nodes[i]); }
+                        card.classList.add('tl-visible');
+                        if (conns[i]) conns[i].classList.add('tl-visible');
+                        if (descs[i]) typeText(descs[i]);
+                    });
+                }, { threshold: 0.25 });
+                cards.forEach(function(card) { cardObserver.observe(card); });
+
+                return; /* scroll listener لازم نیست */
+            }
+
             /* ساخت ذرات — فقط دسکتاپ */
             var particles = [];
-            if (!isMobile && wrapper) {
+            if (wrapper) {
                 for (var pi = 0; pi < 5; pi++) {
                     var pel = document.createElement('div');
                     pel.className = 'tl-particle';
@@ -800,10 +845,6 @@
                     particles.push(pel);
                 }
             }
-
-            /* cache ابعاد wrapper */
-            var wW = wrapper ? wrapper.offsetWidth  : 0;
-            var wH = wrapper ? wrapper.offsetHeight : 0;
 
             function typeText(desc) {
                 if (desc._typed) return;

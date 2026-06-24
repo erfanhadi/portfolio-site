@@ -121,6 +121,7 @@ function initTypingEffect() {
 }
 
 function initOrbitAnimations() {
+    const isMobileOrbit = window.innerWidth <= 768;
     const planets = document.querySelectorAll('.random-orbit');
     const container = document.querySelector('.avatar-container');
     const sunCore = document.querySelector('.sun-core');
@@ -130,41 +131,33 @@ function initOrbitAnimations() {
     const maxOrbitRadius = containerSize * 0.46;
     const orbitStep = (maxOrbitRadius - minOrbitRadius) / Math.max(planets.length - 1, 1);
 
+    /* روی موبایل keyframe‌ها را یکجا در یک <style> می‌نویسیم */
+    let allKeyframes = '';
+
     planets.forEach((planet, index) => {
         const startAngle = (index * (360 / planets.length));
         const radius = minOrbitRadius + (index * orbitStep);
-
-        const duration = 15 + Math.random() * 15;
+        /* روی موبایل سرعت کمتر = فریم‌های کمتر = مصرف کمتر */
+        const duration = isMobileOrbit
+            ? 28 + Math.random() * 20
+            : 15 + Math.random() * 15;
         const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
-        const delay = 0;
-
-        planet.style.transform = `rotate(${startAngle}deg) translateX(${radius}px) rotate(-${startAngle}deg)`;
 
         const animationName = `orbit${index}`;
-        const keyframes = `
-            @keyframes ${animationName} {
-                from {
-                    transform: rotate(${startAngle}deg) translateX(${radius}px) rotate(-${startAngle}deg);
-                }
-                to {
-                    transform: rotate(${startAngle + 360}deg) translateX(${radius}px) rotate(-${startAngle + 360}deg);
-                }
-            }
-        `;
+        allKeyframes += `@keyframes ${animationName}{from{transform:rotate(${startAngle}deg) translateX(${radius}px) rotate(-${startAngle}deg)}to{transform:rotate(${startAngle + 360}deg) translateX(${radius}px) rotate(-${startAngle + 360}deg)}}`;
 
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = keyframes;
-        document.head.appendChild(styleSheet);
-
+        planet.style.willChange = 'transform';
+        planet.style.transform = `rotate(${startAngle}deg) translateX(${radius}px) rotate(-${startAngle}deg)`;
         planet.style.animation = `${animationName} ${duration}s linear infinite ${direction}`;
-        planet.style.animationDelay = `${delay}s`;
 
-        planet.addEventListener('mouseenter', () => {
-            planet.style.animationPlayState = 'paused';
-        });
-
-        planet.addEventListener('mouseleave', () => {
-            planet.style.animationPlayState = 'running';
-        });
+        if (!isMobileOrbit) {
+            planet.addEventListener('mouseenter', () => { planet.style.animationPlayState = 'paused'; });
+            planet.addEventListener('mouseleave', () => { planet.style.animationPlayState = 'running'; });
+        }
     });
+
+    /* یک <style> واحد برای همه keyframe‌ها */
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = allKeyframes;
+    document.head.appendChild(styleSheet);
 }
