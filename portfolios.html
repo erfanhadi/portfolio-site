@@ -244,9 +244,14 @@
                         <img
                             src="Assets/Images/QuickShop.png"
                             alt="Portfolio WebSite"
+<<<<<<< Updated upstream
                             class="w-full h-[180px] object-cover transition-transform duration-[400ms]"
                             width="350"
                             height="180"
+=======
+                            class="w-full h-[180px] object-cover transition-transform duration-[400ms] group-hover:hidden"
+                            loading="lazy"
+>>>>>>> Stashed changes
                         />
                         <h3
                             class="my-[15px_0_5px] mt-2 text-[1.2rem] text-accent transition-colors duration-300"
@@ -354,7 +359,6 @@
                 var revealIds = ['p-heading', 'p-tools', 'p-subheading', 'p-card-0'];
                 var TRANSITION = 'opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1)';
 
-                // همه رو از اول مخفی کن
                 revealIds.forEach(function (id) {
                     var el = document.getElementById(id);
                     if (!el) return;
@@ -374,7 +378,7 @@
                     });
                 }
 
-                // MutationObserver — هر وقت loader مخفی شد (توسط هر کسی)، reveal کن
+                // MutationObserver
                 var loader = document.querySelector('.loader_container');
                 if (loader) {
                     var mo = new MutationObserver(function () {
